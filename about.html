@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ECOS Technologies - Nationwide ITAD Solutions | R2v3 & ISO Certified</title>
+    <meta name="description" content="R2v3 & ISO certified ITAD provider. 22+ years industry experience. Flexible, nationwide IT asset disposition tailored to your business needs.">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 55px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-cta:hover {
+            background: #4CAF4C;
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            margin-top: 73px;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        /* Our Story Section */
+        .story-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .story-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .story-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .story-image {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,83,156,0.2);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--gray-100);
+            padding: 4rem 2rem;
+        }
+        
+        .stats-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .values-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .values-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .values-header p {
+            font-size: 1.2rem;
+            color: var(--gray-700);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .values-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .value-card {
+            text-align: center;
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .value-card p {
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+        
+        /* Why Different Section */
+        .different-section {
+            background: var(--gray-100);
+            padding: 5rem 2rem;
+        }
+        
+        .different-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .different-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .different-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .different-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .different-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .different-number {
+            background: var(--success);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .different-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .different-content p {
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .team-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .team-container h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .team-container p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Facility Section */
+        .facility-section {
+            background: var(--gray-100);
+            padding: 5rem 2rem;
+        }
+        
+        .facility-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .facility-container h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .facility-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .facility-feature {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .facility-feature h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .facility-feature p {
+            color: var(--gray-700);
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.2s;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-brand h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .story-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .different-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .facility-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header id="header">
+        <nav>
+            <a href="/" class="logo">
+                <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>Secure. Compliant. Nationwide.</h1>
+        <p>22+ years of ITAD expertise delivering tailored solutions for businesses across America</p>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-content">
+                <h2>About ECOS Technologies</h2>
+                <p>Based in Tucker, Georgia, ECOS Technologies provides comprehensive IT asset disposition services to businesses nationwide. With over 22 years of industry leadership experience, we've built a reputation for reliability, compliance, and value.</p>
+                <p>We understand that every business has unique ITAD needs. That's why we offer flexible solutions - from single computer pickups to complete data center decommissioning. Our hybrid approach allows us to scale services to match your requirements perfectly.</p>
+                <p>As one of the few ITAD providers holding both R2v3 certification and ISO 14001, 9001, and 45001 standards, we ensure your assets are handled with the highest levels of security, quality, and environmental responsibility.</p>
+            </div>
+            <div class="story-image">
+                <div>
+                    <p style="font-size: 2rem; margin-bottom: 1rem;">🏢</p>
+                    <p>Tucker, Georgia Headquarters<br>Serving businesses nationwide<br>Since 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">22+</div>
+                <div class="stat-label">Years Industry Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">R2v3</div>
+                <div class="stat-label">Certified Facility</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">ISO Certifications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500K+</div>
+                <div class="stat-label">Assets Processed Annually</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-header">
+            <h2>Our Core Values</h2>
+            <p>Principles that guide our business</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3>Security</h3>
+                <p>Data protection is our top priority. Every asset is tracked, documented, and certified destroyed according to NIST 800-88 standards.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Sustainability</h3>
+                <p>We maximize asset recovery and minimize environmental impact through responsible recycling and remarketing programs.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⭐</div>
+                <h3>Service</h3>
+                <p>From single computers to entire data centers, we provide professional service tailored to each client's needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We're Different -->
+    <section class="different-section">
+        <div class="different-container">
+            <div class="different-header">
+                <h2>Why Choose ECOS?</h2>
+            </div>
+            <div class="different-grid">
+                <div class="different-item">
+                    <div class="different-number">1</div>
+                    <div class="different-content">
+                        <h3>Flexible Solutions</h3>
+                        <p>Hybrid ITAD model that scales to your needs - from single pickups to enterprise-wide refreshes.</p>
+                    </div>
+                </div>
+                <div class="different-item">
+                    <div class="different-number">2</div>
+                    <div class="different-content">
+                        <h3>Nationwide Service</h3>
+                        <p>Coverage across all 48 continental states with consistent service quality and compliance.</p>
+                    </div>
+                </div>
+                <div class="different-item">
+                    <div class="different-number">3</div>
+                    <div class="different-content">
+                        <h3>Industry Experience</h3>
+                        <p>Over 22 years of ITAD expertise ensuring best practices and maximum value recovery.</p>
+                    </div>
+                </div>
+                <div class="different-item">
+                    <div class="different-number">4</div>
+                    <div class="different-content">
+                        <h3>Certified Excellence</h3>
+                        <p>R2v3 plus ISO 14001, 9001, and 45001 certifications - your guarantee of quality and compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-container">
+            <h2>Our Team</h2>
+            <p>ECOS Technologies brings together experienced ITAD professionals committed to excellence. Every team member is trained in data security protocols and dedicated to providing exceptional service.</p>
+            <p>From asset collection to final reporting, our team ensures your IT disposition is handled professionally, securely, and in full compliance with all regulations.</p>
+        </div>
+    </section>
+
+    <!-- Facility Section -->
+    <section class="facility-section">
+        <div class="facility-container">
+            <h2>Our Facility</h2>
+            <p style="font-size: 1.1rem; color: var(--gray-700); margin-bottom: 2rem;">4761 Hugh Howell Road, Tucker, GA 30084</p>
+            <div class="facility-features">
+                <div class="facility-feature">
+                    <h3>Secure Processing</h3>
+                    <p>24/7 surveillance and access control</p>
+                </div>
+                <div class="facility-feature">
+                    <h3>Data Destruction</h3>
+                    <p>On-site shredding and degaussing</p>
+                </div>
+                <div class="facility-feature">
+                    <h3>Climate Controlled</h3>
+                    <p>Optimal storage conditions</p>
+                </div>
+                <div class="facility-feature">
+                    <h3>Efficient Logistics</h3>
+                    <p>Loading docks for quick turnaround</p>
+                </div>
+                <div class="facility-feature">
+                    <h3>High Capacity</h3>
+                    <p>500K+ assets processed annually</p>
+                </div>
+                <div class="facility-feature">
+                    <h3>Full Compliance</h3>
+                    <p>R2v3 and ISO certified operations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <h2>Ready to Get Started?</h2>
+        <p>Let us handle your IT asset disposition with security, compliance, and value recovery</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn-white">Get a Quote</a>
+            <a href="/compliance" class="btn-outline">View Certifications</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ECOS Technologies</h3>
+                <p>R2v3, ISO 14001, 9001 & 45001 certified IT asset disposition services. Flexible, nationwide ITAD solutions tailored to your business needs.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services">All Services</a></li>
+                    <li><a href="/services#data-destruction">Data Destruction</a></li>
+                    <li><a href="/services#asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services#recycling">Electronics Recycling</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Compliance</h4>
+                <ul>
+                    <li><a href="/compliance">All Certifications</a></li>
+                    <li><a href="/compliance#r2v3">R2v3 Certification</a></li>
+                    <li><a href="/compliance#iso">ISO Standards</a></li>
+                    <li><a href="/compliance#nist">NIST 800-88</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📍 4761 Hugh Howell Road</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;Tucker, GA 30084</li>
+                    <li>📞 404-500-6057</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>⏰ Mon-Fri: 9:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Tucker, Georgia | R2v3 & ISO Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.8s ease-out';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and sections
+        document.querySelectorAll('.stat-card, .value-card, .different-item, .facility-feature').forEach(item => {
+            observer.observe(item);
+        });
+        
+        // Animate stat numbers
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const text = statNumber.textContent;
+                    
+                    if (text.includes('500K+')) {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 25;
+                            if (current >= 500) {
+                                current = 500;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + 'K+';
+                        }, 30);
+                    } else if (text.includes('100%')) {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 5;
+                            if (current >= 100) {
+                                current = 100;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + '%';
+                        }, 30);
+                    } else if (text.includes('22+')) {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 1;
+                            if (current >= 22) {
+                                current = 22;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + '+';
+                        }, 50);
+                    } else if (text === '3') {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 1;
+                            if (current >= 3) {
+                                current = 3;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current;
+                        }, 100);
+                    }
+                    
+                    statObserver.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            statObserver.observe(stat);
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ECOS Technologies</h3>
+                <p>R2v3, ISO 14001, 9001 & 45001 certified IT asset disposition services. Secure, compliant, and sustainable solutions for everyone from homeowners to Fortune 500.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services">All Services</a></li>
+                    <li><a href="/services#data-destruction">Data Destruction</a></li>
+                    <li><a href="/services#asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services#recycling">Electronics Recycling</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Compliance</h4>
+                <ul>
+                    <li><a href="/compliance">All Certifications</a></li>
+                    <li><a href="/compliance#r2v3">R2v3 Certification</a></li>
+                    <li><a href="/compliance#iso">ISO Standards</a></li>
+                    <li><a href="/compliance#nist">NIST 800-88</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📍 4761 Hugh Howell Road</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;Tucker, GA 30084</li>
+                    <li>📞 404-500-6057</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>⏰ Mon-Fri: 9:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Tucker, Georgia | R2v3 & ISO Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.8s ease-out';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and sections
+        document.querySelectorAll('.stat-card, .value-card, .different-item, .facility-feature').forEach(item => {
+            observer.observe(item);
+        });
+        
+        // Animate stat numbers
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const text = statNumber.textContent;
+                    
+                    if (text.includes('500K+')) {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 25;
+                            if (current >= 500) {
+                                current = 500;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + 'K+';
+                        }, 30);
+                    } else if (text.includes('100%')) {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 5;
+                            if (current >= 100) {
+                                current = 100;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + '%';
+                        }, 30);
+                    } else if (text.includes('22+')) {
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += 1;
+                            if (current >= 22) {
+                                current = 22;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + '+';
+                        }, 50);
+                    }
+                    
+                    statObserver.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            statObserver.observe(stat);
+        });
+    </script>
+</body>
+</html>
