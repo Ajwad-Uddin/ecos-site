@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compliance & Certifications - R2v3 & ISO Certified | ECOS Technologies</title>
-    <meta name="description" content="R2v3 and ISO 14001/9001 certified ITAD provider. NIST 800-88 compliant data destruction. Meet HIPAA, SOX, and regulatory requirements with certified processes.">
+    <meta name="description" content="R2v3 and ISO 14001/9001/45001 certified ITAD provider. NIST 800-88 compliant data destruction. Meet HIPAA, SOX, and regulatory requirements with certified processes.">
     
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,43 +140,40 @@
         .certification-badges {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
+            gap: 2rem;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
         }
         
         .cert-badge {
             background: white;
-            padding: 1rem 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            min-width: 160px;
         }
         
-        .cert-badge-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
+        .cert-badge-logo {
+            height: 80px;
+            width: auto;
+            margin-bottom: 1rem;
+            object-fit: contain;
         }
         
         .cert-badge-text h3 {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: var(--primary);
             margin-bottom: 0.25rem;
+            font-weight: 600;
         }
         
         .cert-badge-text p {
             font-size: 0.875rem;
             color: var(--gray-600);
+            text-align: center;
         }
         
         .compliance-hero h1 {
@@ -350,7 +347,7 @@
             flex-wrap: wrap;
         }
         
-        .btn-download {
+        .btn-request {
             background: var(--primary);
             color: white;
             padding: 0.75rem 1.5rem;
@@ -361,9 +358,11 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.2s;
+            cursor: pointer;
+            border: none;
         }
         
-        .btn-download:hover {
+        .btn-request:hover {
             background: var(--accent);
             transform: translateY(-2px);
         }
@@ -382,6 +381,88 @@
         .btn-verify:hover {
             background: var(--primary);
             color: white;
+        }
+        
+        /* Request Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray-500);
+        }
+        
+        .close-modal:hover {
+            color: var(--gray-700);
+        }
+        
+        .modal h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .modal input,
+        .modal select {
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .modal button {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .modal button:hover {
+            background: var(--primary);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         
         /* Compliance Matrix Section */
@@ -548,8 +629,10 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            display: inline-block;
             transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .btn-white:hover {
@@ -564,7 +647,6 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            display: inline-block;
             border: 2px solid white;
             transition: all 0.2s;
         }
@@ -576,75 +658,68 @@
         
         /* Footer */
         footer {
-            background: var(--primary);
+            background: var(--gray-900);
             color: white;
-            padding: 3rem 2rem 1.5rem;
+            padding: 3rem 2rem 2rem;
         }
         
-        .footer-container {
-            max-width: 1280px;
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
         }
         
-        .footer-brand h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            line-height: 1.6;
-        }
-        
         .footer-column h4 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             margin-bottom: 1rem;
+            color: white;
         }
         
         .footer-column ul {
             list-style: none;
         }
         
-        .footer-column a {
-            color: rgba(255,255,255,0.7);
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray-300);
             text-decoration: none;
-            display: block;
-            padding: 0.25rem 0;
             transition: color 0.2s;
         }
         
-        .footer-column a:hover {
-            color: white;
+        .footer-column ul li a:hover {
+            color: var(--accent);
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
             text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.875rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
         }
         
-        /* Responsive */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
-            .compliance-hero h1 {
-                font-size: 2rem;
-            }
-            
             .certification-badges {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .cert-badge {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .compliance-hero h1 {
+                font-size: 2rem;
             }
             
             .certification-card {
@@ -655,56 +730,53 @@
                 grid-template-columns: 1fr;
             }
             
-            .compliance-grid {
-                grid-template-columns: 1fr;
+            .certification-card:nth-child(even) .cert-visual {
+                order: unset;
             }
             
-            .footer-container {
+            .compliance-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+    <!-- Header Navigation -->
+    <header>
         <nav>
             <a href="/" class="logo">
-                <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies - Certified ITAD Solutions">
+                <img src="https://www.ecos-recycling.com/wp-content/uploads/2024/12/cropped-ECOS_Logo-removebg-preview.png" alt="ECOS Technologies">
             </a>
             <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
                 <li><a href="/services">Services</a></li>
-                <li><a href="/industries">Industries</a></li>
                 <li><a href="/compliance" class="active">Compliance</a></li>
                 <li><a href="/process">Process</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/resources">Resources</a></li>
-                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Certification Badges -->
     <section class="compliance-hero">
         <div class="compliance-hero-content">
             <div class="certification-badges">
                 <div class="cert-badge">
-                    <div class="cert-badge-icon">R2v3</div>
+                    <img src="https://lirp.cdn-website.com/1ca7ddc3/dms3rep/multi/opt/R2V3_certified_logo-480x592-640w.png" alt="R2v3 Certified" class="cert-badge-logo">
                     <div class="cert-badge-text">
                         <h3>R2v3 Certified</h3>
-                        <p>Since 2024</p>
+                        <p>Responsible Recycling</p>
                     </div>
                 </div>
                 <div class="cert-badge">
-                    <div class="cert-badge-icon">ISO</div>
+                    <img src="https://camachem.com/pub/media/wysiwyg/Logo_of_the_ISO.jpg" alt="ISO Certified" class="cert-badge-logo">
                     <div class="cert-badge-text">
-                        <h3>ISO 14001 & 9001</h3>
-                        <p>Certified Provider</p>
+                        <h3>ISO 14001, 9001 & 45001</h3>
+                        <p>Triple Certified</p>
                     </div>
                 </div>
                 <div class="cert-badge">
-                    <div class="cert-badge-icon">NIST</div>
+                    <img src="https://www.logicgate.com/wp-content/smush-webp/plt-nist-800-53-01-hero-01.png.webp" alt="NIST Compliant" class="cert-badge-logo">
                     <div class="cert-badge-text">
                         <h3>NIST 800-88</h3>
                         <p>Compliant</p>
@@ -712,7 +784,7 @@
                 </div>
             </div>
             <h1>Industry-Leading Compliance & Certifications</h1>
-            <p>ECOS Technologies maintains the highest standards in IT asset disposition. Our R2v3 and ISO certifications place us in the top 6% of ITAD providers nationwide.</p>
+            <p>ECOS Technologies maintains the highest standards in IT asset disposition. Our R2v3 and complete ISO certifications place us in the top 6% of ITAD providers nationwide.</p>
         </div>
     </section>
 
@@ -720,7 +792,7 @@
     <section class="trust-statement">
         <div class="trust-statement-content">
             <h2>Compliance You Can Trust</h2>
-            <p>In an industry where data security and environmental responsibility are paramount, ECOS Technologies has invested over $30,000 in achieving and maintaining the most rigorous certifications available. This commitment ensures your assets are handled with the highest standards of security, compliance, and sustainability.</p>
+            <p>In an industry where data security and environmental responsibility are paramount, ECOS Technologies has invested over $30,000 in achieving and maintaining the most rigorous certifications available. Our R2v3, ISO 14001, ISO 9001, and ISO 45001 certifications ensure your assets are handled with the highest standards of security, quality, environmental protection, and occupational health and safety.</p>
             
             <div class="stat-badges">
                 <div class="stat-badge">
@@ -744,13 +816,13 @@
     </section>
 
     <!-- Certifications Detail -->
-    <section class="certifications-detail" id="r2v3">
-        <div class="certifications-container">
+    <section class="certifications-detail">
+        <div class="certifications-container" id="r2v3">
             <!-- R2v3 Certification -->
             <div class="certification-card">
                 <div class="cert-visual">
                     <div class="cert-icon-large">R2v3</div>
-                    <a href="#" class="btn-download">📄 Download Certificate</a>
+                    <button class="btn-request" onclick="openModal('R2v3')">📋 Request Certificate</button>
                 </div>
                 <div class="cert-content">
                     <h3>R2v3 Certification</h3>
@@ -788,7 +860,7 @@
                 </div>
                 <div class="cert-visual">
                     <div class="cert-icon-large">ISO</div>
-                    <a href="#" class="btn-download">📄 Download Certificate</a>
+                    <button class="btn-request" onclick="openModal('ISO 14001')">📋 Request Certificate</button>
                 </div>
             </div>
 
@@ -796,7 +868,7 @@
             <div class="certification-card">
                 <div class="cert-visual">
                     <div class="cert-icon-large">ISO</div>
-                    <a href="#" class="btn-download">📄 Download Certificate</a>
+                    <button class="btn-request" onclick="openModal('ISO 9001')">📋 Request Certificate</button>
                 </div>
                 <div class="cert-content">
                     <h3>ISO 9001:2015</h3>
@@ -814,8 +886,58 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ISO 45001 Certification -->
+            <div class="certification-card">
+                <div class="cert-content">
+                    <h3>ISO 45001:2018</h3>
+                    <p class="cert-subtitle">Occupational Health & Safety Management</p>
+                    <p>Our ISO 45001 certification demonstrates our commitment to providing a safe and healthy workplace for our employees, contractors, and visitors while preventing work-related injuries and ill health.</p>
+                    <ul class="cert-features">
+                        <li>Proactive improvement of OH&S performance</li>
+                        <li>Hazard identification and risk assessment</li>
+                        <li>Worker consultation and participation</li>
+                        <li>Emergency preparedness and response</li>
+                        <li>Compliance with legal and regulatory requirements</li>
+                    </ul>
+                    <div class="cert-actions">
+                        <a href="#" class="btn-verify">Verify Certification</a>
+                    </div>
+                </div>
+                <div class="cert-visual">
+                    <div class="cert-icon-large">ISO</div>
+                    <button class="btn-request" onclick="openModal('ISO 45001')">📋 Request Certificate</button>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Certificate Request Modal -->
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Request Certificate</h3>
+            <p>Please provide your information to receive our <span id="certType"></span> certificate.</p>
+            <form onsubmit="handleCertRequest(event)">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Company Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Purpose of Request</option>
+                    <option value="vendor">Vendor Verification</option>
+                    <option value="compliance">Compliance Audit</option>
+                    <option value="rfp">RFP/Procurement</option>
+                    <option value="duediligence">Due Diligence</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">Submit Request</button>
+            </form>
+            <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 1rem;">
+                Certificate requests are processed within 1 business day. As per R2v3 requirements, all certificate requests must be verified and logged.
+            </p>
+        </div>
+    </div>
 
     <!-- Compliance Matrix -->
     <section class="compliance-matrix">
@@ -901,31 +1023,31 @@
                 <div class="standard-card">
                     <div class="standard-icon">📊</div>
                     <h4>Chain of Custody</h4>
-                    <p>Complete documentation from pickup to final disposition with serialized tracking</p>
+                    <p>Complete tracking and documentation from pickup to final disposition</p>
                 </div>
                 
                 <div class="standard-card">
-                    <div class="standard-icon">🌱</div>
+                    <div class="standard-icon">♻️</div>
                     <h4>Zero Landfill</h4>
-                    <p>100% diversion from landfills through responsible recycling and material recovery</p>
+                    <p>100% of materials recycled or properly disposed through certified downstream partners</p>
                 </div>
                 
                 <div class="standard-card">
-                    <div class="standard-icon">📝</div>
-                    <h4>Audit Support</h4>
-                    <p>Comprehensive reporting and documentation to support your compliance audits</p>
+                    <div class="standard-icon">🔬</div>
+                    <h4>Testing Protocols</h4>
+                    <p>Comprehensive testing of all equipment for functionality and data removal</p>
                 </div>
                 
                 <div class="standard-card">
-                    <div class="standard-icon">🔄</div>
-                    <h4>Downstream Tracking</h4>
-                    <p>Full visibility into the final disposition of all materials through vetted vendors</p>
+                    <div class="standard-icon">📋</div>
+                    <h4>Reporting Standards</h4>
+                    <p>Detailed reporting with serial-level tracking and certificates of destruction</p>
                 </div>
                 
                 <div class="standard-card">
                     <div class="standard-icon">⚡</div>
-                    <h4>Rapid Response</h4>
-                    <p>48-hour turnaround on compliance documentation and certificate generation</p>
+                    <h4>Energy Recovery</h4>
+                    <p>Material recovery processes that minimize environmental impact</p>
                 </div>
             </div>
         </div>
@@ -933,133 +1055,137 @@
 
     <!-- CTA Section -->
     <section class="compliance-cta">
-        <h2>Need Compliance Documentation?</h2>
-        <p>Get certificates of destruction, compliance reports, and audit support within 48 hours</p>
+        <h2>Ready to Work with a Certified Partner?</h2>
+        <p>Experience the peace of mind that comes with R2v3 and ISO triple-certified ITAD services</p>
         <div class="cta-buttons">
-            <a href="/contact" class="btn-white">Request Certificates</a>
-            <a href="tel:404-555-0100" class="btn-outline">Speak to Compliance Team</a>
+            <a href="/contact" class="btn-white">Get Compliance Audit</a>
+            <a href="tel:1-866-891-7467" class="btn-outline">📞 1-866-891-7467</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>ECOS Technologies</h3>
-                <p>R2v3 and ISO certified IT asset disposition services. Secure, compliant, and sustainable solutions for enterprise and government.</p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About ECOS</a></li>
+                    <li><a href="/compliance">Certifications</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
             </div>
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
+                    <li><a href="/services/itad">IT Asset Disposition</a></li>
                     <li><a href="/services/data-destruction">Data Destruction</a></li>
                     <li><a href="/services/asset-recovery">Asset Recovery</a></li>
-                    <li><a href="/services/recycling">Recycling</a></li>
                     <li><a href="/services/logistics">Logistics</a></li>
-                    <li><a href="/services/data-center">Data Center</a></li>
-                    <li><a href="/services">All Services</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Compliance</h4>
+                <h4>Industries</h4>
                 <ul>
-                    <li><a href="/compliance#r2v3">R2v3 Certification</a></li>
-                    <li><a href="/compliance#iso14001">ISO 14001</a></li>
-                    <li><a href="/compliance#iso9001">ISO 9001</a></li>
-                    <li><a href="/compliance#nist">NIST 800-88</a></li>
-                    <li><a href="/compliance#hipaa">HIPAA</a></li>
-                    <li><a href="/compliance#sox">SOX</a></li>
+                    <li><a href="/industries/healthcare">Healthcare</a></li>
+                    <li><a href="/industries/government">Government</a></li>
+                    <li><a href="/industries/financial">Financial</a></li>
+                    <li><a href="/industries/education">Education</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Company</h4>
+                <h4>Contact</h4>
                 <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/process">Our Process</a></li>
-                    <li><a href="/industries">Industries</a></li>
-                    <li><a href="/resources">Resources</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/portal">Customer Portal</a></li>
+                    <li>📞 1-866-891-7467</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>📍 Atlanta, Georgia</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Atlanta, Georgia</p>
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001 Certified</p>
         </div>
     </footer>
 
     <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 10) {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
         
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 100;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        // Modal functions
+        function openModal(certName) {
+            document.getElementById('certModal').style.display = 'block';
+            document.getElementById('certType').textContent = certName;
+        }
         
-        // Animate stat numbers on scroll
-        const animateNumbers = () => {
-            const numbers = document.querySelectorAll('.stat-number');
-            
-            numbers.forEach(number => {
-                const updateCount = () => {
-                    const target = number.innerText;
-                    
-                    if (target === 'Zero') {
-                        return;
-                    } else if (target.includes('%')) {
-                        const finalValue = parseInt(target);
-                        let currentValue = 0;
-                        const increment = finalValue / 30;
-                        
-                        const timer = setInterval(() => {
-                            currentValue += increment;
-                            if (currentValue >= finalValue) {
-                                number.innerText = finalValue + '%';
-                                clearInterval(timer);
-                            } else {
-                                number.innerText = Math.floor(currentValue) + '%';
-                            }
-                        }, 50);
-                    }
-                };
-                
-                // Trigger animation when element is in view
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            updateCount();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                });
-                
-                observer.observe(number);
-            });
+        function closeModal() {
+            document.getElementById('certModal').style.display = 'none';
+        }
+        
+        function handleCertRequest(event) {
+            event.preventDefault();
+            alert('Thank you for your request. Our compliance team will send your ' + document.getElementById('certType').textContent + ' certificate within 1 business day.');
+            closeModal();
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('certModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Animate stat numbers
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
         };
         
-        animateNumbers();
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const finalValue = statNumber.textContent;
+                    
+                    if (finalValue === '6%') {
+                        let current = 0;
+                        const increment = setInterval(() => {
+                            current += 1;
+                            statNumber.textContent = current + '%';
+                            if (current >= 6) clearInterval(increment);
+                        }, 100);
+                    } else if (finalValue === '100%') {
+                        let current = 0;
+                        const increment = setInterval(() => {
+                            current += 5;
+                            statNumber.textContent = current + '%';
+                            if (current >= 100) clearInterval(increment);
+                        }, 30);
+                    } else if (finalValue === '24/7') {
+                        statNumber.style.transform = 'scale(0)';
+                        setTimeout(() => {
+                            statNumber.style.transition = 'transform 0.5s';
+                            statNumber.style.transform = 'scale(1)';
+                        }, 500);
+                    }
+                    
+                    statObserver.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
         
-        // Certification card animations
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            statObserver.observe(stat);
+        });
+        
+        // Certification cards animation
         const certCards = document.querySelectorAll('.certification-card');
         const certObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
