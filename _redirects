@@ -1,0 +1,21 @@
+# Clean URLs - Netlify will remove .html from your URLs
+/services         /services.html    200
+/compliance       /compliance.html  200
+/contact          /contact.html     200
+/about            /about.html       200
+/industries       /industries.html   200
+/process          /process.html      200
+/resources        /resources.html    200
+
+# Service sub-pages
+/services/data-destruction    /services-data-destruction.html    200
+/services/asset-recovery      /services-asset-recovery.html      200
+/services/data-center         /services-data-center.html         200
+/services/logistics           /services-logistics.html           200
+/services/compliance          /services-compliance.html          200
+/services/recycling           /services-recycling.html           200
+
+# Redirect common variations
+/home             /                  301
+/index            /                  301
+/index.html       /                  301
