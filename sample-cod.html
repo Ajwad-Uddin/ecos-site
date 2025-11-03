@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Destruction - Sample | ECOS Technologies</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        
+        /* Certificate Container */
+        .certificate-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Sample Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: bold;
+            color: rgba(0, 83, 156, 0.1);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Certificate Content */
+        .certificate-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 50px;
+        }
+        
+        /* Header with Logo */
+        .cert-header {
+            text-align: center;
+            border-bottom: 3px solid #00539C;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-section {
+            margin-bottom: 20px;
+        }
+        
+        .logo-section img {
+            height: 80px;
+            width: auto;
+        }
+        
+        .cert-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #00539C;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .cert-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .cert-number {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Certification Badges */
+        .cert-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .badge {
+            text-align: center;
+        }
+        
+        .badge-icon {
+            width: 60px;
+            height: 60px;
+            background: #00539C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            margin: 0 auto 5px;
+        }
+        
+        .badge-text {
+            font-size: 10px;
+            color: #666;
+        }
+        
+        /* Certificate Body */
+        .cert-body {
+            margin: 30px 0;
+        }
+        
+        .cert-statement {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #5CB85C;
+            margin-bottom: 30px;
+        }
+        
+        .cert-statement p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        /* Information Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-section {
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .info-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Asset Table */
+        .asset-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .asset-table thead {
+            background: #00539C;
+            color: white;
+        }
+        
+        .asset-table th {
+            padding: 12px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .asset-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #333;
+        }
+        
+        .asset-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Method Section */
+        .method-section {
+            background: #f0f7ff;
+            border: 1px solid #0EA5E9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .method-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #00539C;
+            margin-bottom: 10px;
+        }
+        
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .method-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background: #5CB85C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .method-text {
+            font-size: 12px;
+            color: #333;
+        }
+        
+        /* Signature Section */
+        .signature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .signature-box {
+            text-align: center;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+            height: 60px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 24px;
+            color: #00539C;
+            padding-bottom: 5px;
+        }
+        
+        .signature-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .signature-title {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        /* Footer */
+        .cert-footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 3px solid #00539C;
+            text-align: center;
+        }
+        
+        .footer-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-item {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .footer-item strong {
+            color: #333;
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        .compliance-statement {
+            font-size: 10px;
+            color: #999;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .certificate-container {
+                box-shadow: none;
+            }
+            
+            .watermark {
+                opacity: 0.05;
+            }
+        }
+        
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .btn-download {
+            background: #00539C;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-download:hover {
+            background: #003d72;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-section">
+        <button class="btn-download" onclick="window.print()">📄 Download/Print Sample COD</button>
+    </div>
+    
+    <div class="certificate-container">
+        <!-- Watermark -->
+        <div class="watermark">SAMPLE</div>
+        
+        <!-- Certificate Content -->
+        <div class="certificate-content">
+            <!-- Header -->
+            <div class="cert-header">
+                <div class="logo-section">
+                    <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+                </div>
+                <h1 class="cert-title">Certificate of Destruction</h1>
+                <p class="cert-subtitle">Data Sanitization & Asset Disposition Verification</p>
+                <p class="cert-number">Certificate #: COD-2024-SAMPLE-001</p>
+                
+                <div class="cert-badges">
+                    <div class="badge">
+                        <div class="badge-icon">R2v3</div>
+                        <div class="badge-text">Certified</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">ISO</div>
+                        <div class="badge-text">14001:2015</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">ISO</div>
+                        <div class="badge-text">9001:2015</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">ISO</div>
+                        <div class="badge-text">45001:2018</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">NIST</div>
+                        <div class="badge-text">800-88 Rev.1</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate Statement -->
+            <div class="cert-body">
+                <div class="cert-statement">
+                    <p><strong>This certifies that ECOS Technologies</strong> has received, processed, and destroyed the data-bearing devices listed below in accordance with NIST 800-88 Rev.1 Guidelines for Media Sanitization and all applicable federal, state, and local regulations. All data contained on these devices has been permanently destroyed and is unrecoverable.</p>
+                </div>
+                
+                <!-- Client and Service Information -->
+                <div class="info-grid">
+                    <div class="info-section">
+                        <div class="info-label">Client Organization</div>
+                        <div class="info-value">Sample Company, Inc.</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Service Location</div>
+                        <div class="info-value">123 Business Parkway, Atlanta, GA 30301</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Date of Destruction</div>
+                        <div class="info-value">November 3, 2024</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Service Type</div>
+                        <div class="info-value">On-Site Data Destruction</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Work Order #</div>
+                        <div class="info-value">WO-2024-SAMPLE</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Chain of Custody #</div>
+                        <div class="info-value">COC-2024-SAMPLE</div>
+                    </div>
+                </div>
+                
+                <!-- Asset List -->
+                <table class="asset-table">
+                    <thead>
+                        <tr>
+                            <th>Asset Type</th>
+                            <th>Manufacturer</th>
+                            <th>Model</th>
+                            <th>Serial Number</th>
+                            <th>Asset Tag</th>
+                            <th>Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hard Drive</td>
+                            <td>Seagate</td>
+                            <td>ST2000DM001</td>
+                            <td>XXXX-SAMPLE-001</td>
+                            <td>IT-2024-001</td>
+                            <td>Physical</td>
+                        </tr>
+                        <tr>
+                            <td>Laptop</td>
+                            <td>Dell</td>
+                            <td>Latitude 5520</td>
+                            <td>XXXX-SAMPLE-002</td>
+                            <td>IT-2024-002</td>
+                            <td>3-Pass Overwrite</td>
+                        </tr>
+                        <tr>
+                            <td>Server</td>
+                            <td>HP</td>
+                            <td>ProLiant DL380</td>
+                            <td>XXXX-SAMPLE-003</td>
+                            <td>IT-2024-003</td>
+                            <td>Physical</td>
+                        </tr>
+                        <tr>
+                            <td>SSD</td>
+                            <td>Samsung</td>
+                            <td>860 EVO</td>
+                            <td>XXXX-SAMPLE-004</td>
+                            <td>IT-2024-004</td>
+                            <td>Crypto Erase</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Device</td>
+                            <td>Apple</td>
+                            <td>iPhone 12</td>
+                            <td>XXXX-SAMPLE-005</td>
+                            <td>IT-2024-005</td>
+                            <td>Factory Reset</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Destruction Method Details -->
+                <div class="method-section">
+                    <div class="method-title">Data Destruction Methods Applied:</div>
+                    <div class="method-grid">
+                        <div class="method-item">
+                            <div class="check-icon">✓</div>
+                            <span class="method-text">DOD 5220.22-M (3-Pass)</span>
+                        </div>
+                        <div class="method-item">
+                            <div class="check-icon">✓</div>
+                            <span class="method-text">Physical Shredding</span>
+                        </div>
+                        <div class="method-item">
+                            <div class="check-icon">✓</div>
+                            <span class="method-text">Degaussing</span>
+                        </div>
+                        <div class="method-item">
+                            <div class="check-icon">✓</div>
+                            <span class="method-text">Cryptographic Erasure</span>
+                        </div>
+                        <div class="method-item">
+                            <div class="check-icon">✓</div>
+                            <span class="method-text">NIST Clear</span>
+                        </div>
+                        <div class="method-item">
+                            <div class="check-icon">✓</div>
+                            <span class="method-text">NIST Purge</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Signatures -->
+                <div class="signature-section">
+                    <div class="signature-box">
+                        <div class="signature-line">John Smith</div>
+                        <div class="signature-name">John Smith</div>
+                        <div class="signature-title">Data Destruction Technician</div>
+                    </div>
+                    <div class="signature-box">
+                        <div class="signature-line">Jane Doe</div>
+                        <div class="signature-name">Jane Doe</div>
+                        <div class="signature-title">Compliance Officer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="cert-footer">
+                <div class="footer-info">
+                    <div class="footer-item">
+                        <strong>ECOS Technologies</strong>
+                        4761 Hugh Howell Road<br>
+                        Tucker, GA 30084
+                    </div>
+                    <div class="footer-item">
+                        <strong>Contact</strong>
+                        Phone: 404-500-6057<br>
+                        info@ecosrecycles.com
+                    </div>
+                    <div class="footer-item">
+                        <strong>Facility License</strong>
+                        EPA ID: GA-SAMPLE-001<br>
+                        State Permit: GA-R2-2024
+                    </div>
+                </div>
+                
+                <div class="compliance-statement">
+                    This certificate verifies that all electronic media and data storage devices listed above have been sanitized in accordance with 
+                    NIST SP 800-88 Rev. 1 Guidelines for Media Sanitization, R2v3:2021 Standard, and all applicable data protection regulations including 
+                    HIPAA, SOX, GLBA, FACTA, and GDPR. The destruction process was witnessed and verified by certified personnel. 
+                    This certificate is valid for audit and compliance purposes.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add current date to certificate if needed
+        const today = new Date();
+        const dateString = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        
+        // Optional: Add QR code or verification functionality
+    </script>
+</body>
+</html>
