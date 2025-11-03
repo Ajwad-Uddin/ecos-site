@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Quote - Free ITAD Assessment & Pickup | ECOS Technologies</title>
+    <meta name="description" content="Get a free quote for IT asset disposal, electronics recycling, or scrap metal pickup. Serving everyone from homeowners to Fortune 500. Same-day quotes, free pickup available.">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00539C;      /* ECOS Blue */
+            --accent: #0EA5E9;       /* Lighter blue */
+            --success: #5CB85C;      /* ECOS Green */
+            --warning: #F59E0B;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            background: var(--gray-50);
+        }
+        
+        /* Header - Consistent with Homepage */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-cta:hover {
+            background: #4CAF4C;
+            transform: translateY(-1px);
+        }
+        
+        /* Contact Hero */
+        .contact-hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Contact Section */
+        .contact-main {
+            padding: 4rem 2rem;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        /* Customer Type Selector */
+        .customer-type-selector {
+            margin-bottom: 2rem;
+        }
+        
+        .customer-type-selector h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .type-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .type-btn {
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--gray-300);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .type-btn:hover {
+            border-color: var(--accent);
+            background: var(--gray-50);
+        }
+        
+        .type-btn.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0,83,156,0.1), rgba(14,165,233,0.1));
+        }
+        
+        .type-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .type-btn h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .type-btn p {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gray-300);
+            z-index: 0;
+        }
+        
+        .progress-line {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 2px;
+            background: var(--success);
+            transition: width 0.5s;
+            z-index: 1;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 2px solid var(--gray-300);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .progress-step.active .step-circle {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+        
+        .progress-step.completed .step-circle {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .progress-step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Form Steps */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-step h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .form-step p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0,83,156,0.1);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* Asset Types Grid */
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .asset-option {
+            padding: 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .asset-option:hover {
+            border-color: var(--accent);
+            background: var(--gray-50);
+        }
+        
+        .asset-option.selected {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0,83,156,0.1), rgba(14,165,233,0.1));
+        }
+        
+        .asset-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .asset-label {
+            font-weight: 600;
+            color: var(--gray-700);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .asset-desc {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+        
+        /* Quantity Selector */
+        .quantity-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .qty-option {
+            padding: 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .qty-option:hover {
+            border-color: var(--accent);
+        }
+        
+        .qty-option.selected {
+            border-color: var(--primary);
+            background: var(--gray-50);
+        }
+        
+        /* Service Checkboxes */
+        .service-options {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .service-option {
+            padding: 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .service-option:hover {
+            background: var(--gray-50);
+        }
+        
+        .service-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .service-info {
+            flex: 1;
+        }
+        
+        .service-info strong {
+            display: block;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .service-info span {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Form Navigation */
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-secondary {
+            background: var(--gray-200);
+            color: var(--gray-700);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-300);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #003d72;
+            transform: translateY(-1px);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #4CAF4C;
+            transform: translateY(-1px);
+        }
+        
+        /* Contact Sidebar */
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        /* Quick Contact Card */
+        .quick-contact {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .quick-contact h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: var(--gray-900);
+            transition: all 0.2s;
+        }
+        
+        .contact-method:hover {
+            background: var(--gray-100);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .contact-info strong {
+            display: block;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-info span {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Trust Indicators */
+        .trust-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .trust-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .trust-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trust-icon {
+            color: var(--success);
+            font-size: 1.25rem;
+        }
+        
+        .trust-text {
+            flex: 1;
+        }
+        
+        .trust-text strong {
+            display: block;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .trust-text span {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Office Location */
+        .location-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .location-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+        }
+        
+        .address {
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .success-message.active {
+            display: block;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 2rem;
+        }
+        
+        .success-message h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .success-message p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .type-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .asset-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .quantity-selector {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta active">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <h1>From Single Computers to Data Centers</h1>
+        <p>Free quotes, free pickup on qualifying orders, and same-day service available</p>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="contact-container">
+            <!-- Quote Form -->
+            <div class="form-section">
+                <!-- Customer Type Selector -->
+                <div class="customer-type-selector">
+                    <h2>I am a...</h2>
+                    <div class="type-buttons">
+                        <button class="type-btn" onclick="selectCustomerType('business')">
+                            <div class="type-icon">🏢</div>
+                            <h3>Business</h3>
+                            <p>10+ devices</p>
+                        </button>
+                        <button class="type-btn" onclick="selectCustomerType('residential')">
+                            <div class="type-icon">🏠</div>
+                            <h3>Homeowner</h3>
+                            <p>1-10 devices</p>
+                        </button>
+                        <button class="type-btn" onclick="selectCustomerType('scrap')">
+                            <div class="type-icon">♻️</div>
+                            <h3>Scrap Dealer</h3>
+                            <p>Bulk metals</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Multi-Step Form -->
+                <form id="quoteForm" action="https://formspree.io/f/mvgvjqaq" method="POST" style="display: none;">
+                    <!-- Hidden fields to capture selections -->
+                    <input type="hidden" name="customer_type" id="customerType">
+                    <input type="hidden" name="selected_assets" id="selectedAssets">
+                    <input type="hidden" name="quantity_range" id="quantityRange">
+                    <input type="hidden" name="services_needed" id="servicesNeeded">
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-line" id="progressLine"></div>
+                        <div class="progress-step active">
+                            <div class="step-circle">1</div>
+                            <div class="step-label">Assets</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-circle">2</div>
+                            <div class="step-label">Services</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">Timeline</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-circle">4</div>
+                            <div class="step-label">Contact</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Asset Types & Quantities -->
+                    <div class="form-step active" id="step1">
+                        <h3>What do you need to recycle?</h3>
+                        <p>Select all that apply. We handle everything from single items to full data centers.</p>
+                        
+                        <div class="asset-grid">
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">💻</div>
+                                <span class="asset-label">Computers</span>
+                                <span class="asset-desc">Desktop, laptops</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">🖥️</div>
+                                <span class="asset-label">Monitors</span>
+                                <span class="asset-desc">LCD, LED</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">🗄️</div>
+                                <span class="asset-label">Servers</span>
+                                <span class="asset-desc">Rack, tower</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">📱</div>
+                                <span class="asset-label">Mobile</span>
+                                <span class="asset-desc">Phones, tablets</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">🔌</div>
+                                <span class="asset-label">Network</span>
+                                <span class="asset-desc">Routers, switches</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">🖨️</div>
+                                <span class="asset-label">Printers</span>
+                                <span class="asset-desc">All types</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">🔩</div>
+                                <span class="asset-label">Scrap Metal</span>
+                                <span class="asset-desc">Steel, aluminum</span>
+                            </div>
+                            <div class="asset-option" onclick="toggleAsset(this)">
+                                <div class="asset-icon">📦</div>
+                                <span class="asset-label">Other</span>
+                                <span class="asset-desc">Mixed e-waste</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Approximate Quantity</label>
+                            <div class="quantity-selector">
+                                <div class="qty-option" onclick="selectQuantity(this)">1-10</div>
+                                <div class="qty-option" onclick="selectQuantity(this)">11-50</div>
+                                <div class="qty-option" onclick="selectQuantity(this)">51-200</div>
+                                <div class="qty-option" onclick="selectQuantity(this)">200+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Additional Details (optional)</label>
+                            <textarea name="asset_details" placeholder="e.g., '50 Dell desktops, 20 monitors' or 'Mixed electronics from office closure'"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Services Needed -->
+                    <div class="form-step" id="step2">
+                        <h3>What services do you need?</h3>
+                        <p>We provide comprehensive solutions. Select all that apply.</p>
+                        
+                        <div class="service-options">
+                            <label class="service-option">
+                                <input type="checkbox" name="service_pickup" value="pickup" checked>
+                                <div class="service-info">
+                                    <strong>Pickup Service</strong>
+                                    <span>Free for qualifying quantities (usually 10+ items)</span>
+                                </div>
+                            </label>
+                            
+                            <label class="service-option">
+                                <input type="checkbox" name="service_data_destruction" value="data_destruction">
+                                <div class="service-info">
+                                    <strong>Data Destruction</strong>
+                                    <span>DOD-compliant wiping or physical destruction</span>
+                                </div>
+                            </label>
+                            
+                            <label class="service-option">
+                                <input type="checkbox" name="service_asset_recovery" value="asset_recovery">
+                                <div class="service-info">
+                                    <strong>Asset Recovery</strong>
+                                    <span>Get paid for valuable equipment</span>
+                                </div>
+                            </label>
+                            
+                            <label class="service-option">
+                                <input type="checkbox" name="service_certificates" value="certificates">
+                                <div class="service-info">
+                                    <strong>Certificates</strong>
+                                    <span>Destruction and recycling certificates for compliance</span>
+                                </div>
+                            </label>
+                            
+                            <label class="service-option">
+                                <input type="checkbox" name="service_deinstallation" value="deinstallation">
+                                <div class="service-info">
+                                    <strong>Deinstallation</strong>
+                                    <span>We can remove equipment from racks/desks</span>
+                                </div>
+                            </label>
+                            
+                            <label class="service-option">
+                                <input type="checkbox" name="service_dropoff" value="dropoff">
+                                <div class="service-info">
+                                    <strong>Just Need Drop-off</strong>
+                                    <span>You bring it to us - always free!</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Timeline -->
+                    <div class="form-step" id="step3">
+                        <h3>When do you need service?</h3>
+                        <p>We offer flexible scheduling to meet your needs.</p>
+                        
+                        <div class="form-group">
+                            <label>Timeline</label>
+                            <select name="timeline">
+                                <option>ASAP - Emergency (within 24-48 hours)</option>
+                                <option>This week</option>
+                                <option>Next 2 weeks</option>
+                                <option>This month</option>
+                                <option>Just exploring options</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Pickup/Service Date</label>
+                            <input type="date" name="preferred_date">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Special Requirements</label>
+                            <textarea name="special_requirements" placeholder="e.g., 'Need weekend pickup', 'Require on-site data destruction', 'Multiple locations'"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact Information -->
+                    <div class="form-step" id="step4">
+                        <h3>Get Your Free Quote</h3>
+                        <p>We'll respond within 2-4 hours during business hours (M-F 9am-5pm).</p>
+                        
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Company (if applicable)</label>
+                            <input type="text" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Service Address</label>
+                            <input type="text" name="address" placeholder="Street address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>City, State, ZIP</label>
+                            <input type="text" name="city_state_zip" placeholder="Tucker, GA 30084">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>How did you hear about us?</label>
+                            <select name="referral_source">
+                                <option>Google Search</option>
+                                <option>Referral</option>
+                                <option>Social Media</option>
+                                <option>Previous Customer</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" onclick="previousStep()" id="prevBtn" style="display: none;">Previous</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()" id="nextBtn">Next Step</button>
+                        <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">Submit Quote Request</button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">✓</div>
+                    <h2>Quote Request Received!</h2>
+                    <p>Thank you for choosing ECOS Technologies. We'll review your request and send you a detailed quote within 2-4 hours during business hours (M-F 9am-5pm).</p>
+                    <p><strong>What happens next:</strong></p>
+                    <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
+                        <li>✓ You'll receive an email confirmation shortly</li>
+                        <li>✓ Our team will review your requirements</li>
+                        <li>✓ We'll call or email with your custom quote</li>
+                        <li>✓ No obligation - approve only if you're satisfied</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="contact-sidebar">
+                <!-- Quick Contact -->
+                <div class="quick-contact">
+                    <h3>Need Immediate Service?</h3>
+                    
+                    <a href="tel:404-500-6057" class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-info">
+                            <strong>404-500-6057</strong>
+                            <span>Mon-Fri 9am-5pm</span>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:info@ecosrecycles.com" class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-info">
+                            <strong>info@ecosrecycles.com</strong>
+                            <span>Response within 2-4 hours</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="contact-method">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-info">
+                            <strong>Live Chat</strong>
+                            <span>Available now</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-card">
+                    <h3>Why Choose ECOS?</h3>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">
+                            <strong>Free Pickup Available</strong>
+                            <span>For qualifying quantities</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">
+                            <strong>Same-Day Service</strong>
+                            <span>Emergency response available</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">
+                            <strong>R2v3 & ISO Certified</strong>
+                            <span>Top 6% of ITAD providers</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">
+                            <strong>We Pay You</strong>
+                            <span>For valuable equipment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">
+                            <strong>No Minimums for Drop-off</strong>
+                            <span>Accepting single items</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="location-card">
+                    <h3>Drop-Off Location</h3>
+                    <div class="map-placeholder">
+                        <span>📍 Map Coming Soon</span>
+                    </div>
+                    <div class="address">
+                        <strong>ECOS Technologies</strong><br>
+                        4761 Hugh Howell Road<br>
+                        Tucker, GA 30084<br>
+                        <br>
+                        <strong>Drop-off Hours:</strong><br>
+                        Mon-Fri: 9:00 AM - 5:00 PM<br>
+                        Saturday: Closed<br>
+                        Sunday: Closed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About ECOS</a></li>
+                    <li><a href="/compliance">Certifications</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/itad">IT Asset Disposition</a></li>
+                    <li><a href="/services/data-destruction">Data Destruction</a></li>
+                    <li><a href="/services/asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services/logistics">Pickup & Logistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="/industries/healthcare">Healthcare</a></li>
+                    <li><a href="/industries/government">Government</a></li>
+                    <li><a href="/industries/financial">Financial</a></li>
+                    <li><a href="/industries/education">Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📞 404-500-6057</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>📍 Tucker, Georgia 30084</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001 Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        let currentStep = 1;
+        const totalSteps = 4;
+        let selectedCustomerType = '';
+        
+        // Customer Type Selection
+        function selectCustomerType(type) {
+            // Store customer type
+            selectedCustomerType = type;
+            document.getElementById('customerType').value = type;
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.type-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to selected button
+            event.currentTarget.classList.add('active');
+            
+            // Show the form
+            document.getElementById('quoteForm').style.display = 'block';
+            
+            // Customize form based on customer type
+            if (type === 'residential') {
+                // Adjust for homeowners
+                document.querySelector('#step1 h3').textContent = 'What electronics do you have?';
+            } else if (type === 'scrap') {
+                // Adjust for scrap dealers
+                document.querySelector('#step1 h3').textContent = 'What materials are you recycling?';
+            } else {
+                // Business default
+                document.querySelector('#step1 h3').textContent = 'What IT assets need disposal?';
+            }
+            
+            // Scroll to form
+            document.getElementById('quoteForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Asset Selection
+        function toggleAsset(element) {
+            element.classList.toggle('selected');
+        }
+        
+        // Quantity Selection
+        function selectQuantity(element) {
+            document.querySelectorAll('.qty-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+        
+        // Form Navigation
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(s => {
+                s.classList.remove('active');
+            });
+            
+            // Show current step
+            document.getElementById(`step${step}`).classList.add('active');
+            
+            // Update progress bar
+            document.querySelectorAll('.progress-step').forEach((s, index) => {
+                if (index < step) {
+                    s.classList.add('completed');
+                    s.classList.remove('active');
+                } else if (index === step - 1) {
+                    s.classList.add('active');
+                    s.classList.remove('completed');
+                } else {
+                    s.classList.remove('active', 'completed');
+                }
+            });
+            
+            // Update progress line
+            const progressLine = document.getElementById('progressLine');
+            const progressPercentage = ((step - 1) / (totalSteps - 1)) * 100;
+            progressLine.style.width = `${progressPercentage}%`;
+            
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (step === 1) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+            
+            if (step === totalSteps) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+        }
+        
+        function nextStep() {
+            // Collect data before moving to next step
+            if (currentStep === 1) {
+                // Collect selected assets
+                const selectedAssets = [];
+                document.querySelectorAll('.asset-option.selected').forEach(asset => {
+                    selectedAssets.push(asset.querySelector('.asset-label').textContent);
+                });
+                document.getElementById('selectedAssets').value = selectedAssets.join(', ');
+                
+                // Collect quantity
+                const selectedQty = document.querySelector('.qty-option.selected');
+                if (selectedQty) {
+                    document.getElementById('quantityRange').value = selectedQty.textContent;
+                }
+            } else if (currentStep === 2) {
+                // Collect selected services
+                const services = [];
+                document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(checkbox => {
+                    services.push(checkbox.parentElement.querySelector('strong').textContent);
+                });
+                document.getElementById('servicesNeeded').value = services.join(', ');
+            }
+            
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+                window.scrollTo({ top: 100, behavior: 'smooth' });
+            }
+        }
+        
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+                window.scrollTo({ top: 100, behavior: 'smooth' });
+            }
+        }
+        
+        // Form submission handled by Formspree
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            // Collect final data before submission
+            const selectedAssets = [];
+            document.querySelectorAll('.asset-option.selected').forEach(asset => {
+                selectedAssets.push(asset.querySelector('.asset-label').textContent);
+            });
+            document.getElementById('selectedAssets').value = selectedAssets.join(', ');
+            
+            const selectedQty = document.querySelector('.qty-option.selected');
+            if (selectedQty) {
+                document.getElementById('quantityRange').value = selectedQty.textContent;
+            }
+            
+            const services = [];
+            document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(checkbox => {
+                services.push(checkbox.parentElement.querySelector('strong').textContent);
+            });
+            document.getElementById('servicesNeeded').value = services.join(', ');
+            
+            // Form will submit normally to Formspree
+        });
+    </script>
+</body>
+</html>
