@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve - Healthcare, Government, Financial & Education ITAD | ECOS Technologies</title>
+    <meta name="description" content="Specialized ITAD solutions for healthcare, government, financial services, and education. HIPAA, SOX, FERPA compliant. R2v3 and ISO certified disposal services.">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00539C;      /* ECOS Blue */
+            --accent: #0EA5E9;       /* Lighter blue */
+            --success: #5CB85C;      /* ECOS Green */
+            --warning: #F59E0B;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header - Consistent with Homepage */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-cta:hover {
+            background: #4CAF4C;
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .industries-hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .industries-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="20" height="20" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 30px 30px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Trust Stats Bar */
+        .trust-stats {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* Why Industry Expertise Section */
+        .why-expertise {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .why-expertise-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .expertise-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .expertise-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .expertise-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* Industries Grid Section */
+        .industries-grid-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .industries-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+        }
+        
+        .industry-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .industry-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .industry-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+        
+        .industry-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .industry-header h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .industry-tagline {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+        
+        .industry-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .industry-description {
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            background: var(--gray-50);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .industry-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .industry-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-700);
+        }
+        
+        .industry-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .industry-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .industry-stats {
+            background: var(--gray-50);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+        }
+        
+        .industry-stat {
+            text-align: center;
+        }
+        
+        .industry-stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .industry-stat-label {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+        
+        .industry-cta {
+            margin-top: auto;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.875rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s;
+            flex: 1;
+        }
+        
+        .btn-primary:hover {
+            background: #003d72;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 0.875rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            border: 2px solid var(--primary);
+            transition: all 0.2s;
+            flex: 1;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Client Logos Section */
+        .clients-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .clients-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .clients-container h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .clients-container p {
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+        }
+        
+        .client-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .client-type {
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .client-type-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .client-type h4 {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .client-type p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* CTA Section */
+        .industries-cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+            text-align: center;
+        }
+        
+        .industries-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .industries-cta p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.2s;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .industries-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries" class="active">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="industries-hero">
+        <div class="hero-content">
+            <h1>Industry-Specific ITAD Excellence</h1>
+            <p>From HIPAA-compliant healthcare facilities to secure government installations, we understand your unique compliance requirements and operational needs</p>
+            
+            <div class="trust-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Healthcare Facilities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Government Contracts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Financial Institutions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Educational Organizations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Industry Expertise Matters -->
+    <section class="why-expertise">
+        <div class="why-expertise-container">
+            <div class="section-header">
+                <h2>Why Industry Expertise Matters</h2>
+                <p>Every industry has unique compliance requirements, security protocols, and operational challenges. Generic ITAD providers can't match specialized expertise.</p>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">📋</div>
+                    <h3>Regulatory Mastery</h3>
+                    <p>We stay current with industry-specific regulations like HIPAA, SOX, FERPA, and FedRAMP, ensuring your compliance is never compromised.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">🔐</div>
+                    <h3>Security Protocols</h3>
+                    <p>Industry-specific security measures, from CMMC for defense contractors to PCI-DSS for payment processors.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">🎯</div>
+                    <h3>Tailored Solutions</h3>
+                    <p>Custom workflows designed for your industry's unique needs, timelines, and documentation requirements.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">⚡</div>
+                    <h3>Faster Processing</h3>
+                    <p>Industry experience means no learning curve. We know exactly what you need and deliver it efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Grid -->
+    <section class="industries-grid-section">
+        <div class="industries-container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Select your industry to see how our specialized solutions address your specific needs</p>
+            </div>
+            
+            <div class="industries-grid">
+                <!-- Healthcare -->
+                <div class="industry-card">
+                    <div class="industry-header">
+                        <div class="industry-icon">🏥</div>
+                        <h3>Healthcare</h3>
+                        <p class="industry-tagline">HIPAA-Compliant Medical IT Disposal</p>
+                    </div>
+                    <div class="industry-content">
+                        <p class="industry-description">
+                            Protecting patient data is critical. Our HIPAA-compliant processes ensure complete PHI destruction while handling everything from MRI machines to patient tablets.
+                        </p>
+                        
+                        <div class="compliance-badges">
+                            <span class="compliance-badge">HIPAA</span>
+                            <span class="compliance-badge">HITECH</span>
+                            <span class="compliance-badge">FDA 21 CFR</span>
+                        </div>
+                        
+                        <ul class="industry-features">
+                            <li>On-site data destruction in hospital data centers</li>
+                            <li>Medical equipment disposal (X-ray, MRI, ultrasound)</li>
+                            <li>Patient record system decommissioning</li>
+                            <li>BAA agreements and PHI handling protocols</li>
+                        </ul>
+                        
+                        <div class="industry-stats">
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">500+</div>
+                                <div class="industry-stat-label">Hospitals Served</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">100%</div>
+                                <div class="industry-stat-label">HIPAA Compliance</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">Zero</div>
+                                <div class="industry-stat-label">PHI Breaches</div>
+                            </div>
+                        </div>
+                        
+                        <div class="industry-cta">
+                            <a href="/industries/healthcare" class="btn-primary">Healthcare Solutions</a>
+                            <a href="/contact" class="btn-secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Government -->
+                <div class="industry-card">
+                    <div class="industry-header">
+                        <div class="industry-icon">🏛️</div>
+                        <h3>Government</h3>
+                        <p class="industry-tagline">Cleared Facility, Trusted Service</p>
+                    </div>
+                    <div class="industry-content">
+                        <p class="industry-description">
+                            With experience serving Department of Defense and Homeland Security, we understand the stringent requirements of government IT disposal.
+                        </p>
+                        
+                        <div class="compliance-badges">
+                            <span class="compliance-badge">FedRAMP</span>
+                            <span class="compliance-badge">CMMC</span>
+                            <span class="compliance-badge">DOD 5220.22-M</span>
+                        </div>
+                        
+                        <ul class="industry-features">
+                            <li>Cleared personnel for sensitive facilities</li>
+                            <li>GSA schedule pricing available</li>
+                            <li>NIST 800-88 purge and destroy methods</li>
+                            <li>Approved vendor for federal agencies</li>
+                        </ul>
+                        
+                        <div class="industry-stats">
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">50+</div>
+                                <div class="industry-stat-label">Gov Contracts</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">DOD</div>
+                                <div class="industry-stat-label">Approved</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">24hr</div>
+                                <div class="industry-stat-label">Emergency Response</div>
+                            </div>
+                        </div>
+                        
+                        <div class="industry-cta">
+                            <a href="/industries/government" class="btn-primary">Government Solutions</a>
+                            <a href="/contact" class="btn-secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Services -->
+                <div class="industry-card">
+                    <div class="industry-header">
+                        <div class="industry-icon">🏦</div>
+                        <h3>Financial Services</h3>
+                        <p class="industry-tagline">SOX & GLBA Compliant Disposal</p>
+                    </div>
+                    <div class="industry-content">
+                        <p class="industry-description">
+                            Banks, credit unions, and financial institutions trust us with their most sensitive data. Our SOX-compliant processes ensure complete audit trails.
+                        </p>
+                        
+                        <div class="compliance-badges">
+                            <span class="compliance-badge">SOX</span>
+                            <span class="compliance-badge">GLBA</span>
+                            <span class="compliance-badge">PCI-DSS</span>
+                            <span class="compliance-badge">FACTA</span>
+                        </div>
+                        
+                        <ul class="industry-features">
+                            <li>Trading floor equipment decommissioning</li>
+                            <li>ATM and POS system disposal</li>
+                            <li>Detailed audit reports for compliance</li>
+                            <li>Secure chain of custody documentation</li>
+                        </ul>
+                        
+                        <div class="industry-stats">
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">200+</div>
+                                <div class="industry-stat-label">Banks Served</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">$2M</div>
+                                <div class="industry-stat-label">Insurance</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">100%</div>
+                                <div class="industry-stat-label">Audit Success</div>
+                            </div>
+                        </div>
+                        
+                        <div class="industry-cta">
+                            <a href="/industries/financial" class="btn-primary">Financial Solutions</a>
+                            <a href="/contact" class="btn-secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="industry-card">
+                    <div class="industry-header">
+                        <div class="industry-icon">🎓</div>
+                        <h3>Education</h3>
+                        <p class="industry-tagline">School District & University ITAD</p>
+                    </div>
+                    <div class="industry-content">
+                        <p class="industry-description">
+                            From K-12 districts to major universities, we handle bulk technology refreshes with FERPA compliance and educational pricing.
+                        </p>
+                        
+                        <div class="compliance-badges">
+                            <span class="compliance-badge">FERPA</span>
+                            <span class="compliance-badge">COPPA</span>
+                            <span class="compliance-badge">E-Rate</span>
+                        </div>
+                        
+                        <ul class="industry-features">
+                            <li>Chromebook and iPad bulk processing</li>
+                            <li>Summer refresh scheduling</li>
+                            <li>Student data protection protocols</li>
+                            <li>Special educational institution pricing</li>
+                        </ul>
+                        
+                        <div class="industry-stats">
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">100+</div>
+                                <div class="industry-stat-label">Schools Served</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">50K+</div>
+                                <div class="industry-stat-label">Student Devices</div>
+                            </div>
+                            <div class="industry-stat">
+                                <div class="industry-stat-number">Free</div>
+                                <div class="industry-stat-label">Pickup Service</div>
+                            </div>
+                        </div>
+                        
+                        <div class="industry-cta">
+                            <a href="/industries/education" class="btn-primary">Education Solutions</a>
+                            <a href="/contact" class="btn-secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Types Section -->
+    <section class="clients-section">
+        <div class="clients-container">
+            <h2>From Fortune 500 to Local Business</h2>
+            <p>Our hybrid model serves organizations of all sizes with the same commitment to security and compliance</p>
+            
+            <div class="client-types">
+                <div class="client-type">
+                    <div class="client-type-icon">🏢</div>
+                    <h4>Enterprise</h4>
+                    <p>Fortune 500 companies with complex compliance needs</p>
+                </div>
+                
+                <div class="client-type">
+                    <div class="client-type-icon">🏥</div>
+                    <h4>Healthcare Systems</h4>
+                    <p>Multi-facility hospitals and medical practices</p>
+                </div>
+                
+                <div class="client-type">
+                    <div class="client-type-icon">🏛️</div>
+                    <h4>Government</h4>
+                    <p>Federal, state, and local agencies</p>
+                </div>
+                
+                <div class="client-type">
+                    <div class="client-type-icon">🏪</div>
+                    <h4>SMB</h4>
+                    <p>Small and medium businesses needing professional ITAD</p>
+                </div>
+                
+                <div class="client-type">
+                    <div class="client-type-icon">🎓</div>
+                    <h4>Education</h4>
+                    <p>Schools, colleges, and universities</p>
+                </div>
+                
+                <div class="client-type">
+                    <div class="client-type-icon">🏭</div>
+                    <h4>Manufacturing</h4>
+                    <p>Industrial and manufacturing facilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="industries-cta">
+        <h2>Need Industry-Specific ITAD?</h2>
+        <p>Get a customized solution that meets your exact compliance and operational requirements</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn-white">Get Industry Quote</a>
+            <a href="tel:404-500-6057" class="btn-outline">📞 404-500-6057</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="/industries/healthcare">Healthcare</a></li>
+                    <li><a href="/industries/government">Government</a></li>
+                    <li><a href="/industries/financial">Financial Services</a></li>
+                    <li><a href="/industries/education">Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services">All Services</a></li>
+                    <li><a href="/services#data-destruction">Data Destruction</a></li>
+                    <li><a href="/services#asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services#logistics">Pickup & Logistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About ECOS</a></li>
+                    <li><a href="/compliance">Certifications</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📍 4761 Hugh Howell Road</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;Tucker, GA 30084</li>
+                    <li>📞 404-500-6057</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>⏰ Mon-Fri: 9:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Tucker, Georgia | R2v3, ISO 14001, 9001, 45001 Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.8s ease-out';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.industry-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Animate stat numbers
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const endValue = statNumber.textContent.replace(/[^0-9]/g, '');
+                    const suffix = statNumber.textContent.replace(/[0-9]/g, '');
+                    
+                    if (endValue) {
+                        let current = 0;
+                        const increment = Math.ceil(endValue / 50);
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= endValue) {
+                                current = endValue;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = current + suffix;
+                        }, 30);
+                    }
+                    
+                    statObserver.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stat-number, .industry-stat-number').forEach(stat => {
+            statObserver.observe(stat);
+        });
+    </script>
+</body>
+</html>
