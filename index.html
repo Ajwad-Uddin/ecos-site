@@ -197,6 +197,18 @@
         
         .hero-image {
             position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .hero-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
         }
         
         .hero-image-placeholder {
@@ -538,17 +550,18 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Secure ITAD Solutions for <span class="accent-text">Enterprise</span></h1>
-                <p>R2v3 and ISO certified IT asset disposition, data destruction, and electronics recycling. Trusted by Fortune 500 companies and government agencies.</p>
+                <h1>Secure ITAD Solutions for <span class="accent-text">Everyone</span></h1>
+                <p>R2v3 and ISO certified IT asset disposition, data destruction, and electronics recycling. From single computers to data centers - trusted by homeowners, businesses, and Fortune 500 companies.</p>
                 <div class="hero-buttons">
-                    <a href="/contact" class="btn-primary">Get a Quote</a>
+                    <a href="/contact" class="btn-primary">Get a Free Quote</a>
                     <a href="/process" class="btn-secondary">Our Process</a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="hero-image-placeholder">
-                    [Your Warehouse Photo Here]
-                </div>
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    <source src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/invideo-ai-1080-7s-Proof_-Ecos-Powers-Secure-Sustainabl-2025-11-03.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
@@ -559,12 +572,12 @@
             <div class="trust-item">
                 <div class="trust-icon">🛡️</div>
                 <div class="trust-label">R2v3 Certified</div>
-                <div class="trust-value">Since 2024</div>
+                <div class="trust-value">Top 6%</div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">✓</div>
-                <div class="trust-label">ISO 14001</div>
-                <div class="trust-value">Certified</div>
+                <div class="trust-label">ISO Triple Certified</div>
+                <div class="trust-value">14001, 9001, 45001</div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">🔒</div>
@@ -592,42 +605,42 @@
                 <div class="service-icon">💾</div>
                 <h3>Data Destruction</h3>
                 <p>NIST 800-88 compliant data sanitization with certified destruction reports. On-site and off-site options available.</p>
-                <a href="/services/data-destruction" class="service-link">Learn More →</a>
+                <a href="/services#data-destruction" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">♻️</div>
                 <h3>Asset Recovery</h3>
                 <p>Maximize ROI through remarketing and revenue sharing programs. We handle logistics, refurbishment, and resale.</p>
-                <a href="/services/asset-recovery" class="service-link">Learn More →</a>
+                <a href="/services#asset-recovery" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">📦</div>
                 <h3>Logistics & Pickup</h3>
-                <p>Nationwide pickup services with secure chain of custody. White glove service for data center decommissioning.</p>
-                <a href="/services/logistics" class="service-link">Learn More →</a>
+                <p>Nationwide pickup services with secure chain of custody. Free pickup for qualifying quantities.</p>
+                <a href="/services#logistics" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">📋</div>
                 <h3>Compliance Reporting</h3>
                 <p>Detailed asset reports, certificates of destruction, and environmental impact statements for audit trails.</p>
-                <a href="/services/compliance" class="service-link">Learn More →</a>
+                <a href="/compliance" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🏢</div>
                 <h3>Data Center Services</h3>
                 <p>Complete data center decommissioning services including equipment removal, logistics, and value recovery.</p>
-                <a href="/services/data-center" class="service-link">Learn More →</a>
+                <a href="/services#data-center" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🌍</div>
                 <h3>Sustainable Recycling</h3>
-                <p>Zero landfill commitment with downstream vendor auditing. Full transparency in our recycling process.</p>
-                <a href="/services/recycling" class="service-link">Learn More →</a>
+                <p>Zero landfill commitment. From single items to bulk scrap - we accept all electronics and metals.</p>
+                <a href="/services#recycling" class="service-link">Learn More →</a>
             </div>
         </div>
     </section>
@@ -685,28 +698,28 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>ECOS Technologies</h3>
-                <p>R2v3 and ISO certified IT asset disposition services. Secure, compliant, and sustainable solutions for enterprise and government.</p>
+                <p>R2v3, ISO 14001, 9001 & 45001 certified IT asset disposition services. Secure, compliant, and sustainable solutions for everyone from homeowners to Fortune 500.</p>
             </div>
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="/services/data-destruction">Data Destruction</a></li>
-                    <li><a href="/services/asset-recovery">Asset Recovery</a></li>
-                    <li><a href="/services/recycling">Recycling</a></li>
-                    <li><a href="/services/logistics">Logistics</a></li>
-                    <li><a href="/services/data-center">Data Center</a></li>
                     <li><a href="/services">All Services</a></li>
+                    <li><a href="/services#data-destruction">Data Destruction</a></li>
+                    <li><a href="/services#asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services#recycling">Electronics Recycling</a></li>
+                    <li><a href="/services#logistics">Pickup & Logistics</a></li>
+                    <li><a href="/services#data-center">Data Center Services</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Compliance</h4>
                 <ul>
+                    <li><a href="/compliance">All Certifications</a></li>
                     <li><a href="/compliance#r2v3">R2v3 Certification</a></li>
                     <li><a href="/compliance#iso14001">ISO 14001</a></li>
                     <li><a href="/compliance#iso9001">ISO 9001</a></li>
+                    <li><a href="/compliance#iso45001">ISO 45001</a></li>
                     <li><a href="/compliance#nist">NIST 800-88</a></li>
-                    <li><a href="/compliance#hipaa">HIPAA</a></li>
-                    <li><a href="/compliance#sox">SOX</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -717,12 +730,21 @@
                     <li><a href="/industries">Industries</a></li>
                     <li><a href="/resources">Resources</a></li>
                     <li><a href="/contact">Contact</a></li>
-                    <li><a href="/portal">Customer Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📍 4761 Hugh Howell Road</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;Tucker, GA 30084</li>
+                    <li>📞 404-500-6057</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>⏰ Mon-Fri: 9:00 AM - 5:00 PM</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Atlanta, Georgia</p>
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Tucker, Georgia | R2v3 & ISO Certified</p>
         </div>
     </footer>
 
