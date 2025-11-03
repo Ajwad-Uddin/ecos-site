@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our ITAD Process - 6-Step Secure Asset Disposition | ECOS Technologies</title>
+    <meta name="description" content="Discover ECOS's certified 6-step ITAD process. From assessment to certification, we ensure complete data security and compliance. R2v3 and ISO certified processes.">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00539C;      /* ECOS Blue */
+            --accent: #0EA5E9;       /* Lighter blue */
+            --success: #5CB85C;      /* ECOS Green */
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header - Consistent with Homepage */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-cta:hover {
+            background: #4CAF4C;
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .process-hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" opacity="0.05"/></svg>');
+            background-size: 50px 50px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .trust-badge-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Process Timeline Section */
+        .process-timeline {
+            padding: 5rem 2rem;
+            background: white;
+            position: relative;
+        }
+        
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Timeline Steps */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 80px);
+            background: linear-gradient(to bottom, var(--primary), var(--success));
+        }
+        
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .timeline-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            z-index: 2;
+            transition: all 0.3s;
+        }
+        
+        .timeline-step:hover .step-number {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-50%) scale(1.1);
+        }
+        
+        .step-content {
+            width: 45%;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .timeline-step:hover .step-content {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .timeline-step:nth-child(odd) .step-content {
+            margin-right: auto;
+        }
+        
+        .timeline-step:nth-child(even) .step-content {
+            margin-left: auto;
+        }
+        
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-content .step-subtitle {
+            color: var(--success);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .step-content p {
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .step-features {
+            list-style: none;
+        }
+        
+        .step-features li {
+            padding: 0.5rem 0;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .step-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        /* Security Highlights Section */
+        .security-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .security-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .security-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .security-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .security-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gray-100);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .security-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .security-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* Why ECOS Process Section */
+        .why-ecos-process {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .why-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .why-content p {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .why-list {
+            list-style: none;
+        }
+        
+        .why-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .why-list-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .why-list strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .why-list span {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+        
+        .why-visual {
+            position: relative;
+        }
+        
+        .stat-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--success), #4CAF4C);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .process-cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+            text-align: center;
+        }
+        
+        .process-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .process-cta p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.2s;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .process-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-step {
+                flex-direction: column !important;
+                margin-left: 60px;
+            }
+            
+            .step-number {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+            
+            .step-content {
+                width: 100%;
+                margin: 0 !important;
+            }
+            
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .timeline-step {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .timeline-step:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-step:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-step:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-step:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-step:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-step:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process" class="active">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="process-hero">
+        <div class="hero-content">
+            <h1>Your Assets, Secured at Every Step</h1>
+            <p>Our certified 6-step process ensures complete data security, regulatory compliance, and maximum value recovery</p>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">✓</div>
+                    <span>48-Hour Turnaround</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">✓</div>
+                    <span>Chain of Custody</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">✓</div>
+                    <span>100% Compliance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-timeline">
+        <div class="timeline-container">
+            <div class="section-header">
+                <h2>Our Proven 6-Step Process</h2>
+                <p>From initial consultation to final certification, we handle every detail with precision and transparency</p>
+            </div>
+            
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-icon">📋</div>
+                        <h3>Initial Assessment & Quote</h3>
+                        <p class="step-subtitle">24-Hour Response Time</p>
+                        <p>We start with a comprehensive evaluation of your IT assets, understanding your specific needs, compliance requirements, and timeline.</p>
+                        <ul class="step-features">
+                            <li>Free on-site or virtual assessment</li>
+                            <li>Detailed inventory analysis</li>
+                            <li>Transparent pricing with no hidden fees</li>
+                            <li>Customized service recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-icon">🚚</div>
+                        <h3>Secure Logistics Coordination</h3>
+                        <p class="step-subtitle">GPS-Tracked Transportation</p>
+                        <p>We coordinate all logistics with military-grade security protocols, ensuring your assets are protected from pickup to processing.</p>
+                        <ul class="step-features">
+                            <li>Sealed, GPS-tracked vehicles</li>
+                            <li>Trained & background-checked personnel</li>
+                            <li>Insurance coverage up to $2M</li>
+                            <li>Flexible scheduling options</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-icon">📦</div>
+                        <h3>Asset Collection & Transport</h3>
+                        <p class="step-subtitle">White-Glove Service</p>
+                        <p>Our certified team handles your assets with care, maintaining strict chain of custody from your facility to ours.</p>
+                        <ul class="step-features">
+                            <li>Tamper-evident packaging</li>
+                            <li>Photo documentation at pickup</li>
+                            <li>Real-time tracking portal access</li>
+                            <li>Multi-location coordination available</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-icon">📊</div>
+                        <h3>Inventory & Tracking</h3>
+                        <p class="step-subtitle">Serial-Level Documentation</p>
+                        <p>Every asset is cataloged with serial-level detail, providing complete transparency and audit trail documentation.</p>
+                        <ul class="step-features">
+                            <li>Barcode scanning & tracking</li>
+                            <li>Online portal for real-time status</li>
+                            <li>Detailed asset condition reports</li>
+                            <li>Photographic documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-icon">🔒</div>
+                        <h3>Data Destruction & Processing</h3>
+                        <p class="step-subtitle">NIST 800-88 Compliant</p>
+                        <p>Your data is destroyed using DOD-approved methods, with options for on-site witnessing or video documentation.</p>
+                        <ul class="step-features">
+                            <li>Multiple overwrite passes</li>
+                            <li>Physical destruction available</li>
+                            <li>Witnessed destruction options</li>
+                            <li>Same-day processing available</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <div class="step-icon">📜</div>
+                        <h3>Reporting & Certification</h3>
+                        <p class="step-subtitle">Complete Documentation</p>
+                        <p>Receive comprehensive reports and certificates that meet all regulatory requirements for audit and compliance.</p>
+                        <ul class="step-features">
+                            <li>Certificate of destruction/recycling</li>
+                            <li>Serial-level audit reports</li>
+                            <li>Environmental impact statements</li>
+                            <li>Secure online portal access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Highlights -->
+    <section class="security-section">
+        <div class="security-container">
+            <div class="section-header">
+                <h2>Security at Every Stage</h2>
+                <p>Multiple layers of protection ensure your data never falls into the wrong hands</p>
+            </div>
+            
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">🛡️</div>
+                    <h4>Physical Security</h4>
+                    <p>24/7 surveillance, access control, and alarmed facilities. All personnel are background-checked and trained in data security protocols.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">📝</div>
+                    <h4>Chain of Custody</h4>
+                    <p>Every asset movement is documented with timestamps, personnel IDs, and photographic evidence. Complete audit trail from start to finish.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">🔐</div>
+                    <h4>Data Protection</h4>
+                    <p>NIST 800-88 compliant sanitization methods. Multiple overwrite passes or physical destruction based on your security requirements.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">✅</div>
+                    <h4>Compliance Assurance</h4>
+                    <p>Meet HIPAA, SOX, GLBA, and other regulatory requirements. Our R2v3 and ISO certifications ensure the highest standards.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">📊</div>
+                    <h4>Transparent Reporting</h4>
+                    <p>Real-time tracking portal, detailed reports, and certificates of destruction provide complete visibility and peace of mind.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">🏢</div>
+                    <h4>Insurance & Liability</h4>
+                    <p>$2M coverage for your assets while in our custody. Comprehensive liability protection throughout the entire process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why ECOS Process -->
+    <section class="why-ecos-process">
+        <div class="why-container">
+            <div class="why-content">
+                <h2>Why Our Process Stands Apart</h2>
+                <p>While others outsource and complicate, we've built a streamlined, direct-service model that delivers results faster and more securely.</p>
+                
+                <ul class="why-list">
+                    <li>
+                        <div class="why-list-icon">✓</div>
+                        <div>
+                            <strong>48-Hour Turnaround</strong>
+                            <span>Industry's fastest processing time - most competitors take 5-7 days</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">✓</div>
+                        <div>
+                            <strong>Direct Service Model</strong>
+                            <span>No subcontractors means better security and accountability</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">✓</div>
+                        <div>
+                            <strong>Revenue Sharing Available</strong>
+                            <span>Recover value from your retired assets with transparent pricing</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="why-list-icon">✓</div>
+                        <div>
+                            <strong>Southeast Regional Focus</strong>
+                            <span>Local presence means faster response and lower costs</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="why-visual">
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Assets Processed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Compliance Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">48hr</div>
+                        <div class="stat-label">Turnaround Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Zero</div>
+                        <div class="stat-label">Security Breaches</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="process-cta">
+        <h2>Ready to Experience the ECOS Difference?</h2>
+        <p>Start with a free assessment and see why Fortune 500 companies trust our process</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn-white">Schedule Assessment</a>
+            <a href="tel:404-500-6057" class="btn-outline">📞 404-500-6057</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About ECOS</a></li>
+                    <li><a href="/compliance">Certifications</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/itad">IT Asset Disposition</a></li>
+                    <li><a href="/services/data-destruction">Data Destruction</a></li>
+                    <li><a href="/services/asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services/logistics">Logistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="/industries/healthcare">Healthcare</a></li>
+                    <li><a href="/industries/government">Government</a></li>
+                    <li><a href="/industries/financial">Financial</a></li>
+                    <li><a href="/industries/education">Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📞 404-500-6057</li>
+                    <li>📧 info@ecosrecycles.com</li>
+                    <li>📍 Atlanta, Georgia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001 Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Timeline animation on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Animate stat numbers
+        const animateValue = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current.toLocaleString() + (element.dataset.suffix || '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+        
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const value = statNumber.textContent;
+                    
+                    if (value.includes('500K+')) {
+                        statNumber.dataset.suffix = 'K+';
+                        animateValue(statNumber, 0, 500, 2000);
+                    } else if (value.includes('100%')) {
+                        statNumber.dataset.suffix = '%';
+                        animateValue(statNumber, 0, 100, 1500);
+                    } else if (value.includes('48hr')) {
+                        statNumber.dataset.suffix = 'hr';
+                        animateValue(statNumber, 0, 48, 1000);
+                    }
+                    
+                    statObserver.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            statObserver.observe(stat);
+        });
+    </script>
+</body>
+</html>
