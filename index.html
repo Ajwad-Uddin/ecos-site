@@ -181,6 +181,18 @@
         .btn-secondary:hover {
             border-color: var(--primary);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-header .btn-secondary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .section-header .btn-secondary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
         }
         
         .hero-image {
@@ -511,12 +523,13 @@
                 <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies - Certified ITAD Solutions">
             </a>
             <ul class="nav-menu">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#industries">Industries</a></li>
-                <li><a href="#compliance">Compliance</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="nav-cta">Get Started</a></li>
             </ul>
         </nav>
     </header>
@@ -528,8 +541,8 @@
                 <h1>Secure ITAD Solutions for <span class="accent-text">Enterprise</span></h1>
                 <p>R2v3 and ISO certified IT asset disposition, data destruction, and electronics recycling. Trusted by Fortune 500 companies and government agencies.</p>
                 <div class="hero-buttons">
-                    <a href="#quote" class="btn-primary">Get a Quote</a>
-                    <a href="#process" class="btn-secondary">Our Process</a>
+                    <a href="/contact" class="btn-primary">Get a Quote</a>
+                    <a href="/process" class="btn-secondary">Our Process</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -571,6 +584,7 @@
         <div class="section-header">
             <h2>Complete ITAD Services</h2>
             <p>End-to-end solutions for secure IT asset disposition and maximum value recovery</p>
+            <a href="/services" class="btn-secondary" style="margin-top: 1.5rem;">View All Services →</a>
         </div>
         
         <div class="services-grid">
@@ -578,42 +592,42 @@
                 <div class="service-icon">💾</div>
                 <h3>Data Destruction</h3>
                 <p>NIST 800-88 compliant data sanitization with certified destruction reports. On-site and off-site options available.</p>
-                <a href="#" class="service-link">Learn More →</a>
+                <a href="/services/data-destruction" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">♻️</div>
                 <h3>Asset Recovery</h3>
                 <p>Maximize ROI through remarketing and revenue sharing programs. We handle logistics, refurbishment, and resale.</p>
-                <a href="#" class="service-link">Learn More →</a>
+                <a href="/services/asset-recovery" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">📦</div>
                 <h3>Logistics & Pickup</h3>
                 <p>Nationwide pickup services with secure chain of custody. White glove service for data center decommissioning.</p>
-                <a href="#" class="service-link">Learn More →</a>
+                <a href="/services/logistics" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">📋</div>
                 <h3>Compliance Reporting</h3>
                 <p>Detailed asset reports, certificates of destruction, and environmental impact statements for audit trails.</p>
-                <a href="#" class="service-link">Learn More →</a>
+                <a href="/services/compliance" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🏢</div>
-                <h3>Enterprise Programs</h3>
-                <p>Customized ITAD programs for large organizations with dedicated account management and SLA guarantees.</p>
-                <a href="#" class="service-link">Learn More →</a>
+                <h3>Data Center Services</h3>
+                <p>Complete data center decommissioning services including equipment removal, logistics, and value recovery.</p>
+                <a href="/services/data-center" class="service-link">Learn More →</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🌍</div>
                 <h3>Sustainable Recycling</h3>
                 <p>Zero landfill commitment with downstream vendor auditing. Full transparency in our recycling process.</p>
-                <a href="#" class="service-link">Learn More →</a>
+                <a href="/services/recycling" class="service-link">Learn More →</a>
             </div>
         </div>
     </section>
@@ -663,7 +677,7 @@
     <section class="cta">
         <h2>Ready to Get Started?</h2>
         <p>Get a customized quote for your ITAD needs in 24 hours</p>
-        <a href="#contact" class="btn-primary">Request a Quote</a>
+        <a href="/contact" class="btn-primary">Request a Quote</a>
     </section>
 
     <!-- Footer -->
@@ -676,28 +690,34 @@
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#">Data Destruction</a></li>
-                    <li><a href="#">Asset Recovery</a></li>
-                    <li><a href="#">Recycling</a></li>
-                    <li><a href="#">Logistics</a></li>
+                    <li><a href="/services/data-destruction">Data Destruction</a></li>
+                    <li><a href="/services/asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services/recycling">Recycling</a></li>
+                    <li><a href="/services/logistics">Logistics</a></li>
+                    <li><a href="/services/data-center">Data Center</a></li>
+                    <li><a href="/services">All Services</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Compliance</h4>
                 <ul>
-                    <li><a href="#">R2v3 Certification</a></li>
-                    <li><a href="#">ISO 14001</a></li>
-                    <li><a href="#">NIST 800-88</a></li>
-                    <li><a href="#">HIPAA</a></li>
+                    <li><a href="/compliance#r2v3">R2v3 Certification</a></li>
+                    <li><a href="/compliance#iso14001">ISO 14001</a></li>
+                    <li><a href="/compliance#iso9001">ISO 9001</a></li>
+                    <li><a href="/compliance#nist">NIST 800-88</a></li>
+                    <li><a href="/compliance#hipaa">HIPAA</a></li>
+                    <li><a href="/compliance#sox">SOX</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Resources</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/process">Our Process</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/portal">Customer Portal</a></li>
                 </ul>
             </div>
         </div>

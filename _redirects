@@ -1,21 +1,47 @@
 # Clean URLs - Netlify will remove .html from your URLs
+
+# Main pages
 /services         /services.html    200
 /compliance       /compliance.html  200
+/process          /process.html     200
 /contact          /contact.html     200
 /about            /about.html       200
-/industries       /industries.html   200
-/process          /process.html      200
-/resources        /resources.html    200
+/industries       /industries.html  200
+/resources        /resources.html   200
+/portal           /portal.html      200
+/calculator       /calculator.html  200
+/case-studies     /case-studies.html 200
 
 # Service sub-pages
 /services/data-destruction    /services-data-destruction.html    200
 /services/asset-recovery      /services-asset-recovery.html      200
 /services/data-center         /services-data-center.html         200
 /services/logistics           /services-logistics.html           200
-/services/compliance          /services-compliance.html          200
+/services/compliance          /services-compliance-reporting.html 200
 /services/recycling           /services-recycling.html           200
+
+# Industry pages
+/industries/healthcare        /industries-healthcare.html         200
+/industries/government        /industries-government.html         200
+/industries/financial         /industries-financial.html          200
+/industries/education         /industries-education.html          200
+/industries/enterprise        /industries-enterprise.html         200
+
+# Resource pages
+/resources/itad-guide         /resources-itad-guide.html          200
+/resources/blog               /blog.html                          200
+/resources/downloads          /resources-downloads.html           200
+/insights                     /blog.html                          301
+
+# SEO Landing pages
+/atlanta-itad                 /atlanta-itad-services.html         200
+/southeast-data-destruction   /southeast-data-destruction.html    200
+/r2v3-certified-recycling     /r2v3-certified-recycling.html      200
+/government-itad-contractor   /government-itad-contractor.html    200
 
 # Redirect common variations
 /home             /                  301
 /index            /                  301
 /index.html       /                  301
+/quote            /contact           301
+/get-quote        /contact           301
