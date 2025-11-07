@@ -323,22 +323,22 @@
             line-height: 1.6;
         }
         
-        /* Team Section */
+        /* Team/Leadership Section */
         .team-section {
             padding: 5rem 2rem;
             background: white;
         }
         
         .team-container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            text-align: center;
         }
         
         .team-container h2 {
             font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
             font-weight: 700;
         }
         
@@ -347,6 +347,99 @@
             color: var(--gray-700);
             line-height: 1.8;
             margin-bottom: 1.5rem;
+        }
+        
+        .team-intro {
+            text-align: center;
+            font-size: 1.25rem !important;
+            margin-bottom: 3rem !important;
+            color: var(--gray-700);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Leadership Grid */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .leader-card {
+            background: var(--gray-100);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .leader-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+        }
+        
+        .leader-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .leader-title {
+            color: var(--accent) !important;
+            font-weight: 600 !important;
+            font-size: 0.95rem !important;
+            margin-bottom: 1.25rem !important;
+            min-height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .leader-bio {
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            color: var(--gray-700) !important;
+            text-align: left;
+            margin-bottom: 0 !important;
+            flex-grow: 1;
+        }
+        
+        /* Team Culture */
+        .team-culture {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+        
+        .team-culture h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .team-culture p {
+            color: white !important;
+            font-size: 1.125rem !important;
+            line-height: 1.8 !important;
+            max-width: 800px;
+            margin: 0 auto !important;
         }
         
         /* Facility Section */
@@ -498,6 +591,27 @@
         }
         
         /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .leadership-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .leadership-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .leader-card:last-child {
+                grid-column: span 2;
+                max-width: 500px;
+                margin: 0 auto;
+                justify-self: center;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -525,6 +639,16 @@
             
             .facility-features {
                 grid-template-columns: 1fr;
+            }
+            
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .leader-card:last-child {
+                grid-column: span 1;
+                max-width: 100%;
             }
             
             .footer-container {
@@ -663,12 +787,39 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Leadership Section -->
     <section class="team-section">
         <div class="team-container">
-            <h2>Our Team</h2>
-            <p>ECOS Technologies brings together experienced ITAD professionals committed to excellence. Every team member is trained in data security protocols and dedicated to providing exceptional service.</p>
-            <p>From asset collection to final reporting, our team ensures your IT disposition is handled professionally, securely, and in full compliance with all regulations.</p>
+            <h2>Executive Leadership</h2>
+            <p class="team-intro">Proven expertise across operations, compliance, and technology drives our commitment to secure IT asset disposition.</p>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-icon">👨‍💼</div>
+                    <h3>Ajwad "AJ" Uddin</h3>
+                    <p class="leader-title">President & Chief Executive Officer</p>
+                    <p class="leader-bio">AJ Uddin founded ECOS Technologies to deliver enterprise-grade ITAD services with greater accessibility and transparency. He oversees strategic direction, business development, and regulatory compliance including R2v3 and ISO 9001, 14001, and 45001 certifications. Under his leadership, ECOS has expanded from regional operations to serve clients nationwide across healthcare, finance, education, and government sectors. AJ maintains direct involvement in key client relationships and certification audits to ensure consistent service quality and compliance standards.</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">👨‍💼</div>
+                    <h3>Velix Benjamin</h3>
+                    <p class="leader-title">Vice President & Chief Operating Officer</p>
+                    <p class="leader-bio">Velix Benjamin brings over 20 years of electronics recycling and reverse logistics experience to ECOS Technologies. He manages all facility operations including asset processing, inventory control, and logistics coordination for nationwide equipment pickups. His expertise in material recovery and downstream vendor management ensures maximum value recovery while maintaining zero landfill commitment. Velix oversees daily operations and warehouse staff to maintain consistent throughput and industry-leading turnaround times.</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">👨‍💼</div>
+                    <h3>Josiah Philips</h3>
+                    <p class="leader-title">Chief Information Security Officer</p>
+                    <p class="leader-bio">Josiah Philips oversees data security and IT infrastructure at ECOS Technologies. He manages chain of custody tracking systems and implements data sanitization protocols in accordance with NIST 800-88 guidelines. His responsibilities include security audits, employee training programs, and verification processes for HIPAA, SOX, and FACTA compliance. Josiah ensures client data remains secure throughout the disposition lifecycle while maintaining internal technology systems for operational efficiency.</p>
+                </div>
+            </div>
+            
+            <div class="team-culture">
+                <h3>Our Commitment</h3>
+                <p>ECOS Technologies combines decades of industry experience with innovative approaches to IT asset disposition. Our leadership team maintains direct involvement in client relationships and operational processes, delivering enterprise-grade services with the flexibility and responsiveness our clients require.</p>
+            </div>
         </div>
     </section>
 
