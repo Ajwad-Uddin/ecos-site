@@ -520,6 +520,7 @@
             border-radius: 16px;
             opacity: 0;
             transition: opacity 0.3s ease;
+            pointer-events: none;
         }
         
         .service-block:hover::before {
@@ -556,6 +557,8 @@
             color: var(--gray-900);
             margin-bottom: 0.75rem;
             line-height: 1.3;
+            position: relative;
+            z-index: 1;
         }
         
         .service-content p {
@@ -573,6 +576,8 @@
             align-items: center;
             gap: 0.5rem;
             transition: gap 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         
         .service-link:hover {
@@ -696,9 +701,9 @@
         /* CTA Section */
         .cta {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: var(--gray-100);
             text-align: center;
-            color: white;
+            color: var(--gray-900);
         }
         
         .cta h2 {
@@ -706,12 +711,13 @@
             font-weight: 800;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
+            color: var(--gray-900);
         }
         
         .cta p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            color: var(--gray-700);
         }
         
         .cta .btn-hero {
@@ -726,8 +732,7 @@
         /* Why Choose Section */
         .why-choose-section {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--dark) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -759,10 +764,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, white 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
         }
         
         .why-choose-header .subtitle {
@@ -787,13 +789,11 @@
             width: 56px;
             height: 56px;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .advantage-icon svg {
@@ -815,18 +815,18 @@
         }
         
         .value-metrics {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 20px;
             padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
         
         .value-metrics h3 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            color: white;
+            color: var(--gray-900);
         }
         
         .metric-item {
@@ -848,7 +848,7 @@
         }
         
         .metric-label {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray-600);
             font-size: 0.925rem;
             line-height: 1.4;
         }
