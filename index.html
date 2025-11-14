@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECOS Technologies - Certified IT Asset Disposition & Data Destruction</title>
-    <meta name="description" content="R2v3 and ISO certified ITAD services. Secure data destruction, asset recovery, and compliant electronics recycling for enterprise and government.">
+    <title>IT Asset Disposition (ITAD), Data Destruction & Electronics Recycling | ECOS Technologies</title>
+    <meta name="description" content="Secure ITAD and data destruction services. R2v3 & ISO certified. Maximize value recovery from retired IT assets while ensuring compliance and data security. Free quote within 24 hours.">
     
-    <!-- Inter Font - What the pros use -->
+    <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,14 +19,20 @@
         }
         
         :root {
-            --primary: #00539C;      /* ECOS Blue from logo */
-            --accent: #0EA5E9;       /* Lighter blue for accents */
-            --success: #5CB85C;      /* ECOS Green from logo */
+            --primary: #00539C;      
+            --accent: #0EA5E9;       
+            --success: #5CB85C;      
+            --dark: #0A0E27;         
             --gray-900: #111827;
+            --gray-800: #1F2937;
             --gray-700: #374151;
+            --gray-600: #4B5563;
             --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
             --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
             --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
             --white: #FFFFFF;
         }
         
@@ -35,9 +41,10 @@
             color: var(--gray-900);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
-        /* Header - Minimal like ITADUSA */
+        /* Header */
         header {
             background: var(--white);
             border-bottom: 1px solid var(--gray-100);
@@ -45,17 +52,19 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         header.scrolled {
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.98);
         }
         
         nav {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0.75rem 2rem;
+            padding: 0.875rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -65,13 +74,11 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0;
         }
         
         .logo img {
-            height: 55px;
+            height: 52px;
             width: auto;
-            display: block;
         }
         
         .nav-menu {
@@ -85,8 +92,25 @@
             color: var(--gray-700);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.925rem;
+            letter-spacing: -0.01em;
             transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
         }
         
         .nav-menu a:hover {
@@ -94,323 +118,577 @@
         }
         
         .nav-cta {
-            background: var(--success);
+            background: linear-gradient(135deg, var(--success) 0%, #4CAF4C 100%);
             color: white !important;
             padding: 0.625rem 1.5rem;
             border-radius: 6px;
-            transition: all 0.2s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(92, 184, 92, 0.2);
         }
         
         .nav-cta:hover {
-            background: #4CAF4C;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(92, 184, 92, 0.3);
         }
         
-        /* Hero Section - Clean like ThinkDynamic */
+        .nav-cta::after {
+            display: none;
+        }
+        
+        /* Hero Section */
         .hero {
             margin-top: 73px;
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
-            min-height: 600px;
+            padding: 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            min-height: 700px;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.03"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E') repeat;
         }
         
         .hero-container {
             max-width: 1280px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            color: white;
         }
         
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.1;
-            color: var(--primary);
+            color: white;
             margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
         
-        .hero-content .accent-text {
-            color: var(--success);
+        .hero-content .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, #4CAF4C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .hero-content p {
-            font-size: 1.25rem;
-            color: var(--gray-700);
+        .hero-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             margin-bottom: 2rem;
-            line-height: 1.6;
         }
         
-        .hero-buttons {
+        .hero-benefit {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .hero-benefit::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            background: rgba(92, 184, 92, 0.2);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+        
+        .hero-trust {
+            font-size: 1.125rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero-trust::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-stat {
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, white 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero-cta-container {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
         }
         
-        .btn-primary {
-            background: var(--accent);
+        .btn-hero {
+            background: linear-gradient(135deg, var(--success) 0%, #4CAF4C 100%);
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            border: 2px solid var(--gray-300);
-            transition: all 0.2s;
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .section-header .btn-secondary {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .section-header .btn-secondary:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-        
-        .hero-image {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .hero-image video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-        
-        .hero-image-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-image-placeholder::after {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-        
-        /* Trust Bar - Like Aptops */
-        .trust-bar {
-            background: white;
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .trust-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .trust-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gray-100);
+            padding: 1.125rem 2.5rem;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-        
-        .trust-label {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .trust-value {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-        }
-        
-        /* Services Section - Grid like ITADUSA */
-        .services {
-            padding: 5rem 2rem;
-            background: var(--gray-100);
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            font-size: 1.125rem;
-            color: var(--gray-700);
-        }
-        
-        .services-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--accent);
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #E0F2FE 0%, #DBEAFE 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .service-card p {
-            color: var(--gray-600);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-link {
-            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: gap 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(92, 184, 92, 0.3);
+            font-size: 1.125rem;
+        }
+        
+        .btn-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(92, 184, 92, 0.4);
+        }
+        
+        .btn-hero::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-hero:hover::after {
+            transform: translateX(3px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1.125rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Certification Logos */
+        .cert-logos {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .cert-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .cert-header h2 {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+        
+        .cert-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .cert-logo {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-logo:nth-child(4) {
+            height: 60px; /* ISO 45001 logo is naturally larger, so make it smaller */
+        }
+        
+        .cert-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        /* Industries Section */
+        .industries-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+        }
+        
+        .industries-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .industries-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .industries-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .industries-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .industry-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(0, 83, 156, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .industry-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+        
+        .industry-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .industry-card p {
+            color: var(--gray-600);
+            line-height: 1.5;
+            font-size: 0.925rem;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        
+        .services-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-header .subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-700);
+            font-weight: 600;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .service-block {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(0, 83, 156, 0.03) 100%);
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-block:hover::before {
+            opacity: 1;
+        }
+        
+        .service-block:hover {
+            transform: translateX(8px);
+        }
+        
+        .service-icon-wrapper {
+            flex-shrink: 0;
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(0, 83, 156, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--primary);
+        }
+        
+        .service-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        
+        .service-content p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .service-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
         }
         
         .service-link:hover {
-            gap: 1rem;
+            gap: 0.75rem;
+        }
+        
+        /* Foundation Section */
+        .foundation {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
+        }
+        
+        .foundation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 1px 1px, var(--gray-200) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .foundation-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .foundation-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+        
+        .foundation-item {
+            text-align: center;
+        }
+        
+        .foundation-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .foundation-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--primary);
+        }
+        
+        .foundation-item h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .foundation-item p {
+            color: var(--gray-600);
+            line-height: 1.5;
+            font-size: 0.925rem;
         }
         
         /* Process Section */
         .process {
             padding: 5rem 2rem;
-            background: white;
+            background: var(--white);
         }
         
-        .process-timeline {
-            max-width: 1000px;
-            margin: 3rem auto 0;
+        .process-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            position: relative;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
         }
         
         .process-step {
-            text-align: center;
-            position: relative;
+            display: flex;
+            gap: 1.5rem;
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            margin: 0 auto 1rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
         
-        .process-step h4 {
-            font-weight: 600;
-            color: var(--primary);
+        .step-content h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
             margin-bottom: 0.5rem;
         }
         
-        .process-step p {
-            font-size: 0.875rem;
+        .step-content p {
             color: var(--gray-600);
+            line-height: 1.5;
         }
         
         /* CTA Section */
@@ -418,95 +696,226 @@
             padding: 5rem 2rem;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             text-align: center;
+            color: white;
         }
         
         .cta h2 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: white;
             margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
         
         .cta p {
             font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
             margin-bottom: 2rem;
+            opacity: 0.95;
         }
         
-        .cta .btn-primary {
-            background: white;
+        .cta .btn-hero {
+            background: var(--white);
             color: var(--primary);
         }
         
-        .cta .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .cta .btn-hero:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Why Choose Section */
+        .why-choose-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-choose-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50%;
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .why-choose-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .why-choose-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, white 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .why-choose-header .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .advantage-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .advantage-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .advantage-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--accent);
+        }
+        
+        .advantage-content h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .advantage-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .value-metrics {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .value-metrics h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .metric-item {
+            margin-bottom: 2rem;
+        }
+        
+        .metric-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--success) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.925rem;
+            line-height: 1.4;
         }
         
         /* Footer */
         footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 2rem 1.5rem;
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 4rem 2rem 2rem;
         }
         
         .footer-container {
             max-width: 1280px;
-            margin: 0 auto;
+            margin: 0 auto 3rem;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
             gap: 3rem;
-            margin-bottom: 2rem;
         }
         
         .footer-brand h3 {
+            color: var(--white);
             font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
         
         .footer-brand p {
-            color: rgba(255,255,255,0.7);
             line-height: 1.6;
+            color: var(--gray-400);
         }
         
         .footer-column h4 {
+            color: var(--white);
             font-size: 0.875rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .footer-column ul {
             list-style: none;
         }
         
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+        
         .footer-column a {
-            color: rgba(255,255,255,0.7);
+            color: var(--gray-400);
             text-decoration: none;
-            display: block;
-            padding: 0.25rem 0;
+            font-size: 0.925rem;
             transition: color 0.2s;
         }
         
         .footer-column a:hover {
-            color: white;
+            color: var(--white);
         }
         
         .footer-bottom {
+            padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
             text-align: center;
-            color: rgba(255,255,255,0.5);
+            color: var(--gray-500);
             font-size: 0.875rem;
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
+        @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -516,13 +925,65 @@
                 font-size: 2.5rem;
             }
             
-            .trust-container {
+            .hero-visual {
+                margin-top: 3rem;
+            }
+            
+            .industries-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .foundation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-metrics {
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-benefits {
+                gap: 1rem;
+            }
+            
+            .hero-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .foundation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
             }
             
             .footer-container {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 2rem;
             }
         }
     </style>
@@ -532,16 +993,15 @@
     <header id="header">
         <nav>
             <a href="/" class="logo">
-                <img src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies - Certified ITAD Solutions">
+                <img src="/ecos-logo.png" alt="ECOS Technologies">
             </a>
             <ul class="nav-menu">
-                <li><a href="/services">Services</a></li>
-                <li><a href="/industries">Industries</a></li>
-                <li><a href="/compliance">Compliance</a></li>
-                <li><a href="/process">Process</a></li>
-                <li><a href="/resources">Resources</a></li>
+                <li><a href="/services">IT Asset Disposition</a></li>
+                <li><a href="/services#data-destruction">Data Destruction</a></li>
+                <li><a href="/services#data-center">Data Centers</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
             </ul>
         </nav>
     </header>
@@ -550,147 +1010,418 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Secure ITAD Solutions for <span class="accent-text">Everyone</span></h1>
-                <p>R2v3 and ISO certified IT asset disposition, data destruction, and electronics recycling. From single computers to data centers - trusted by homeowners, businesses, and Fortune 500 companies.</p>
-                <div class="hero-buttons">
-                    <a href="/contact" class="btn-primary">Get a Free Quote</a>
-                    <a href="/process" class="btn-secondary">Our Process</a>
+                <h1>Secure <span class="gradient-text">IT Asset Disposal</span> & Data Destruction Services</h1>
+                <div class="hero-benefits">
+                    <div class="hero-benefit">Recover Maximum Value from Retired IT Assets</div>
+                    <div class="hero-benefit">Eliminate Risks with Secure Data Destruction</div>
+                    <div class="hero-benefit">Achieve Compliance with Uncompromised Standards</div>
+                </div>
+                <div class="hero-trust">R2v3 & ISO Triple Certified ITAD Provider</div>
+                <div class="hero-cta-container">
+                    <a href="/contact" class="btn-hero">Request Secure ITAD Services</a>
+                    <a href="/process" class="btn-secondary">View Our Process</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-                    <source src="http://ajwadu.sg-host.com/wp-content/uploads/2025/11/invideo-ai-1080-7s-Proof_-Ecos-Powers-Secure-Sustainabl-2025-11-03.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="hero-visual">
+                <div class="hero-stats-grid">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">100%</div>
+                        <div class="hero-stat-label">Data Security</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Zero</div>
+                        <div class="hero-stat-label">Landfill Policy</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">24hr</div>
+                        <div class="hero-stat-label">Quote Turnaround</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Direct</div>
+                        <div class="hero-stat-label">Nationwide Service</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="trust-container">
-            <div class="trust-item">
-                <div class="trust-icon">🛡️</div>
-                <div class="trust-label">R2v3 Certified</div>
-                <div class="trust-value">Top 6%</div>
+    <!-- Certification Logos -->
+    <section class="cert-logos">
+        <div class="cert-header">
+            <h2>Certified and Responsible IT Asset Disposal You Can Trust</h2>
+        </div>
+        <div class="cert-container">
+            <img src="https://techforsuccess.org/wp-content/uploads/2022/04/R2V3_certified_logo-e1656431480739.png" alt="R2v3 Certified" class="cert-logo">
+            <img src="https://www.mmnewman.com/wp-content/uploads/927_iso9001_logo.jpeg" alt="ISO 9001 Certified" class="cert-logo">
+            <img src="https://cdnmedia.eurofins.com/corporate-eurofins/media/12152066/iso14001.jpg" alt="ISO 14001 Certified" class="cert-logo">
+            <img src="https://jalalasd.com/wp-content/uploads/2022/08/image_2022-08-10_223156335-removebg-preview-1.png" alt="ISO 45001 Certified" class="cert-logo">
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section">
+        <div class="industries-container">
+            <div class="industries-header">
+                <h2>Comprehensive ITAD Solutions for Every Sector</h2>
+                <p>Tailored IT asset disposition services meeting industry-specific compliance requirements</p>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                <div class="trust-label">ISO Triple Certified</div>
-                <div class="trust-value">14001, 9001, 45001</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">🔒</div>
-                <div class="trust-label">Data Destruction</div>
-                <div class="trust-value">NIST 800-88</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">📊</div>
-                <div class="trust-label">Assets Processed</div>
-                <div class="trust-value">500K+ Annually</div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>HIPAA-compliant data destruction for medical devices, servers, and patient data systems. Specialized handling for diagnostic equipment and medical technology.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                        </svg>
+                    </div>
+                    <h3>Financial Services</h3>
+                    <p>SOX and GLBA compliant disposal for banking systems, trading platforms, and financial data infrastructure. Secure chain of custody for sensitive financial records.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3>Government</h3>
+                    <p>DOD 5220.22-M and NIST 800-88 compliant disposal. FedRAMP authorized processes for federal, state, and local government agencies.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3>Education</h3>
+                    <p>FERPA-compliant disposal for K-12 and higher education. Bulk processing for computer labs, 1:1 device programs, and campus-wide refreshes.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                        </svg>
+                    </div>
+                    <h3>Technology</h3>
+                    <p>Data center decommissioning, cloud migration support, and secure disposal for tech companies, MSPs, and software developers.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Enterprise</h3>
+                    <p>Fortune 500 and enterprise-wide IT refresh programs. Multi-location coordination with consistent processes and consolidated reporting.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <h2>Complete ITAD Services</h2>
-            <p>End-to-end solutions for secure IT asset disposition and maximum value recovery</p>
-            <a href="/services" class="btn-secondary" style="margin-top: 1.5rem;">View All Services →</a>
+    <section class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Comprehensive IT Asset Disposition (ITAD) & Lifecycle Management</h2>
+                <p class="subtitle">Maximize Value, Ensure Bulletproof Security & Compliance</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-block">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Maximize IT Asset Value: Management, Recovery & Liquidation</h3>
+                        <p>Unlock maximum ROI from retired IT assets with strategic technology asset management and computer liquidation services. We handle secure logistics, data sanitization, and IT asset remarketing for optimal value recovery, backed by transparent, detailed reporting.</p>
+                        <a href="/services#asset-recovery" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-block">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Certified Data Destruction & Secure Hard Drive Disposal</h3>
+                        <p>Ensure absolute data security with certified hard drive destruction exceeding NIST 800-88 guidelines. Our secure hard drive disposal processes include physical hard drive shredding and data erasure, providing secure HDD disposal with certificates of destruction for audit-proof compliance.</p>
+                        <a href="/services#data-destruction" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-block">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Responsible Electronics Recycling & Certified E-waste Solutions</h3>
+                        <p>Champion sustainability with certified e-waste solutions. Our R2v3 Certified processes guarantee environmentally sound corporate electronic asset recycling, responsible downstream vendor management, and adherence to zero-landfill policies, protecting your brand and the planet.</p>
+                        <a href="/services#recycling" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-block">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Expert Data Center Decommissioning & IT Relocation</h3>
+                        <p>Streamline your data center migration projects with our expert decommissioning and IT relocation services. Our project management covers secure asset removal, inventory reconciliation, and logistics coordination to minimize disruption and ensure operational continuity during complex moves.</p>
+                        <a href="/services#data-center" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">💾</div>
-                <h3>Data Destruction</h3>
-                <p>NIST 800-88 compliant data sanitization with certified destruction reports. On-site and off-site options available.</p>
-                <a href="/services#data-destruction" class="service-link">Learn More →</a>
+    </section>
+
+    <!-- Foundation Section -->
+    <section class="foundation">
+        <div class="foundation-container">
+            <div class="section-header">
+                <h2>Secure, Compliant & Trusted ITAD Services by ECOS Technologies</h2>
+                <p class="subtitle">Since establishment, our comprehensive IT Asset Disposition services are built on these foundations of trust and performance:</p>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">♻️</div>
-                <h3>Asset Recovery</h3>
-                <p>Maximize ROI through remarketing and revenue sharing programs. We handle logistics, refurbishment, and resale.</p>
-                <a href="/services#asset-recovery" class="service-link">Learn More →</a>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">📦</div>
-                <h3>Logistics & Pickup</h3>
-                <p>Nationwide pickup services with secure chain of custody. Free pickup for qualifying quantities.</p>
-                <a href="/services#logistics" class="service-link">Learn More →</a>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">📋</div>
-                <h3>Compliance Reporting</h3>
-                <p>Detailed asset reports, certificates of destruction, and environmental impact statements for audit trails.</p>
-                <a href="/compliance" class="service-link">Learn More →</a>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🏢</div>
-                <h3>Data Center Services</h3>
-                <p>Complete data center decommissioning services including equipment removal, logistics, and value recovery.</p>
-                <a href="/services#data-center" class="service-link">Learn More →</a>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🌍</div>
-                <h3>Sustainable Recycling</h3>
-                <p>Zero landfill commitment. From single items to bulk scrap - we accept all electronics and metals.</p>
-                <a href="/services#recycling" class="service-link">Learn More →</a>
+            <div class="foundation-grid">
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3>Uncompromising Security</h3>
+                    <p>Secure, vetted logistics maintain chain-of-custody integrity from pickup to final disposition, protecting your sensitive information at every step.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3>Maximum Value Recovery</h3>
+                    <p>Deep expertise in IT asset remarketing ensures you receive the best possible return on your technology investments through transparent reporting.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3>Certified & Fully Insured</h3>
+                    <p>R2v3 and ISO triple certification verified by independent auditors, plus comprehensive insurance coverage protects your organization.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3>Responsible Sustainability</h3>
+                    <p>Zero-landfill commitment prioritizes asset reuse and responsible recycling through rigorously vetted downstream partners.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Efficient & Timely Service</h3>
+                    <p>Detailed quotes within 24 hours and streamlined processes ensure efficient project execution, minimizing business disruption.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Transparent Reporting</h3>
+                    <p>Comprehensive, audit-ready documentation including serialized certificates ensures full transparency and compliance verification.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Strict adherence to NIST 800-88, HIPAA, and industry-specific regulations safeguards your sensitive information throughout disposal.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <div class="foundation-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Nationwide Coverage</h3>
+                    <p>Direct service across the continental US with our own trucks and vetted team ensures consistent quality and accountability.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="section-header">
-            <h2>Our Secure Process</h2>
-            <p>Complete chain of custody from pickup to final disposition</p>
+    <section class="process">
+        <div class="process-container">
+            <div class="section-header">
+                <h2>Our Streamlined & Secure ITAD Process</h2>
+                <p class="subtitle">Transparent Steps for Compliant IT Asset Disposition, From Start to Finish</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Initial Consultation & Detailed Quote</h4>
+                        <p>Request a quote and receive a detailed proposal within 24 hours covering IT asset recovery potential, secure disposal, and certified data destruction services.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Scope of Work Agreement</h4>
+                        <p>Review and approve a formal Scope of Work (SOW) outlining specific ITAD services for your project or establish a Master Service Agreement (MSA) for recurring needs.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Secure Logistics & On-Site Collection</h4>
+                        <p>Schedule secure, white-glove IT asset removal managed by our vetted logistics team. We maintain strict chain-of-custody protocols from your location to our processing facility.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Secure Processing & Data Sanitization</h4>
+                        <p>IT assets are inventoried, tested, and graded. Data-bearing devices undergo certified data sanitization compliant with NIST 800-88 standards, then prepared for value recovery or recycling.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Value Recovery & Responsible Recycling</h4>
+                        <p>Eligible assets are refurbished and remarketed for maximum value recovery. Non-reusable equipment is responsibly recycled through R2v3 certified processes.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Audit-Ready Reporting & Reconciliation</h4>
+                        <p>Receive comprehensive, serialized reporting detailing final asset disposition, including Certificates of Destruction (CoD) and Certificates of Recycling (CoR) for compliance records.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="process-timeline">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h4>Schedule Pickup</h4>
-                <p>Request quote and schedule secure logistics</p>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose-section">
+        <div class="why-choose-container">
+            <div class="why-choose-header">
+                <h2>Why Leading Organizations Choose ECOS</h2>
+                <p class="subtitle">The competitive advantages that set us apart in the ITAD industry</p>
             </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h4>Secure Transport</h4>
-                <p>GPS-tracked vehicles with sealed containers</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h4>Asset Inventory</h4>
-                <p>Detailed tracking and audit reporting</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h4>Data Destruction</h4>
-                <p>NIST-compliant sanitization methods</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">5</div>
-                <h4>Value Recovery</h4>
-                <p>Remarketing or material recovery</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">6</div>
-                <h4>Certification</h4>
-                <p>Complete documentation and certificates</p>
+            <div class="why-choose-grid">
+                <div class="why-choose-left">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div class="advantage-content">
+                            <h3>Our Trucks, Our Team</h3>
+                            <p>Every pickup handled by our background-checked, uniformed employees using our company-owned fleet. No third-party contractors means complete accountability and security at every touchpoint.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="advantage-content">
+                            <h3>No Overseas Shipping</h3>
+                            <p>All equipment processed domestically in our secure facilities. Your data never leaves the country, and all materials are handled through verified domestic channels only.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div class="advantage-content">
+                            <h3>Nationwide Direct Service</h3>
+                            <p>Coast-to-coast coverage with direct pickup anywhere in the continental US. Whether you're in Oregon, Arizona, or New York, we handle your assets with the same level of excellence.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-choose-right">
+                    <div class="value-metrics">
+                        <h3>Delivering Measurable Value</h3>
+                        <div class="metric-item">
+                            <div class="metric-number">Top 6%</div>
+                            <div class="metric-label">Only 6% of ITAD providers hold both R2v3 and ISO certifications</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">24 Hours</div>
+                            <div class="metric-label">Detailed quotes delivered within one business day</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">Zero Landfill</div>
+                            <div class="metric-label">100% of materials recycled or remarketed responsibly</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">Direct Model</div>
+                            <div class="metric-label">No subcontractors, complete chain of custody control</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta">
-        <h2>Ready to Get Started?</h2>
-        <p>Get a customized quote for your ITAD needs in 24 hours</p>
-        <a href="/contact" class="btn-primary">Request a Quote</a>
+        <h2>Ready to Secure Your IT Asset Disposal?</h2>
+        <p>Get your customized ITAD quote within 24 hours</p>
+        <a href="/contact" class="btn-hero">Request Secure ITAD Services</a>
     </section>
 
     <!-- Footer -->
@@ -698,12 +1429,12 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>ECOS Technologies</h3>
-                <p>R2v3, ISO 14001, 9001 & 45001 certified IT asset disposition services. Secure, compliant, and sustainable solutions for everyone from homeowners to Fortune 500.</p>
+                <p>Secure IT asset disposition and data destruction services nationwide. Direct pickup with our own trucks and vetted team. Maximum value recovery with complete compliance.</p>
             </div>
             <div class="footer-column">
-                <h4>Services</h4>
+                <h4>ITAD Services</h4>
                 <ul>
-                    <li><a href="/services">All Services</a></li>
+                    <li><a href="/services">IT Asset Disposition</a></li>
                     <li><a href="/services#data-destruction">Data Destruction</a></li>
                     <li><a href="/services#asset-recovery">Asset Recovery</a></li>
                     <li><a href="/services#recycling">Electronics Recycling</a></li>
@@ -735,16 +1466,16 @@
             <div class="footer-column">
                 <h4>Contact</h4>
                 <ul>
-                    <li>📍 4761 Hugh Howell Road</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;Tucker, GA 30084</li>
-                    <li>📞 404-500-6057</li>
-                    <li>📧 info@ecosrecycles.com</li>
-                    <li>⏰ Mon-Fri: 9:00 AM - 5:00 PM</li>
+                    <li>4761 Hugh Howell Road</li>
+                    <li>Tucker, GA 30084</li>
+                    <li>404-500-6057</li>
+                    <li>info@ecosrecycles.com</li>
+                    <li>Mon-Fri: 9:00 AM - 5:00 PM</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Tucker, Georgia | R2v3 & ISO Certified</p>
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | Tucker, Georgia | Nationwide ITAD Services</p>
         </div>
     </footer>
 
@@ -773,18 +1504,19 @@
             });
         });
         
-        // Simple animation on scroll
+        // Animation on scroll
         const observerOptions = {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         };
         
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
+                    entry.target.style.transform = 'translateY(30px)';
                     setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }, 100);
@@ -793,8 +1525,8 @@
             });
         }, observerOptions);
         
-        // Observe all service cards and process steps
-        document.querySelectorAll('.service-card, .process-step').forEach(el => {
+        // Observe elements
+        document.querySelectorAll('.service-block, .foundation-item, .process-step, .industry-card, .advantage-item, .metric-item').forEach(el => {
             observer.observe(el);
         });
     </script>
