@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Impact Calculator | IT Recycling Environmental Benefits | ECOS Technologies</title>
+    <meta name="description" content="Calculate the environmental impact of your IT recycling program. See CO2 avoided, materials recovered, and landfill diversion for your ESG reporting.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --eco: #059669;
+            --eco-light: #D1FAE5;
+            --eco-dark: #047857;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            background: linear-gradient(180deg, #ECFDF5 0%, white 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+        }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .main-content {
+            margin-top: 73px;
+            padding: 3rem 2rem;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--eco-light);
+            color: var(--eco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        /* Input Panel */
+        .input-panel {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .input-panel h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--eco);
+            box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
+        }
+        
+        .input-group small {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--eco) 0%, var(--eco-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+        }
+        
+        /* Results Panel */
+        .results-panel {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .impact-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .impact-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .impact-icon.co2 {
+            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+        }
+        
+        .impact-icon.materials {
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        }
+        
+        .impact-icon.landfill {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+        }
+        
+        .impact-icon.water {
+            background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);
+        }
+        
+        .impact-content h3 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+        
+        .impact-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1.1;
+        }
+        
+        .impact-value span {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-500);
+        }
+        
+        .impact-equivalent {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Summary Card */
+        .summary-card {
+            background: linear-gradient(135deg, var(--eco) 0%, var(--eco-dark) 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            color: white;
+        }
+        
+        .summary-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-card p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .summary-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .summary-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        
+        .summary-btn.primary {
+            background: white;
+            color: var(--eco);
+        }
+        
+        .summary-btn.secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Methodology */
+        .methodology {
+            margin-top: 3rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .methodology h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .methodology p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        .methodology ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .methodology li {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 900px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .input-panel {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/resources" class="active">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="hero">
+                <span class="hero-badge">🌍 ESG Reporting Tool</span>
+                <h1>IT Recycling Impact Calculator</h1>
+                <p>Quantify the environmental benefits of your IT asset disposition program for sustainability reporting and ESG metrics.</p>
+            </div>
+            
+            <div class="calculator-grid">
+                <div class="input-panel">
+                    <h2>📊 Enter Your Equipment</h2>
+                    
+                    <div class="input-group">
+                        <label for="laptops">Laptops / Notebooks</label>
+                        <input type="number" id="laptops" value="0" min="0" onchange="calculateImpact()">
+                        <small>Average weight: 5 lbs</small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="desktops">Desktop Computers</label>
+                        <input type="number" id="desktops" value="0" min="0" onchange="calculateImpact()">
+                        <small>Average weight: 20 lbs</small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="monitors">Monitors / Displays</label>
+                        <input type="number" id="monitors" value="0" min="0" onchange="calculateImpact()">
+                        <small>Average weight: 15 lbs</small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="servers">Servers</label>
+                        <input type="number" id="servers" value="0" min="0" onchange="calculateImpact()">
+                        <small>Average weight: 50 lbs</small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="network">Network Equipment</label>
+                        <input type="number" id="network" value="0" min="0" onchange="calculateImpact()">
+                        <small>Switches, routers, firewalls (avg 10 lbs)</small>
+                    </div>
+                    
+                    <button class="calculate-btn" onclick="calculateImpact()">
+                        Calculate Environmental Impact
+                    </button>
+                </div>
+                
+                <div class="results-panel">
+                    <div class="impact-card">
+                        <div class="impact-icon co2">🌱</div>
+                        <div class="impact-content">
+                            <h3>CO₂ Emissions Avoided</h3>
+                            <div class="impact-value"><span id="co2-value">0</span> <span>lbs</span></div>
+                            <div class="impact-equivalent" id="co2-equivalent">Equivalent to 0 miles not driven</div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon materials">♻️</div>
+                        <div class="impact-content">
+                            <h3>Materials Recovered</h3>
+                            <div class="impact-value"><span id="materials-value">0</span> <span>lbs</span></div>
+                            <div class="impact-equivalent" id="materials-equivalent">Metals, plastics, and rare earth elements</div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon landfill">🏭</div>
+                        <div class="impact-content">
+                            <h3>Landfill Diversion</h3>
+                            <div class="impact-value"><span id="landfill-value">0</span> <span>lbs</span></div>
+                            <div class="impact-equivalent" id="landfill-equivalent">100% zero-landfill commitment</div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon water">💧</div>
+                        <div class="impact-content">
+                            <h3>Water Conserved</h3>
+                            <div class="impact-value"><span id="water-value">0</span> <span>gal</span></div>
+                            <div class="impact-equivalent" id="water-equivalent">Manufacturing water saved through reuse</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <h3>📋 Ready for Your ESG Report</h3>
+                        <p>These metrics can be included in your sustainability reporting, CSR documentation, and environmental compliance records. As an R2v3 certified processor, we provide verified documentation to support your claims.</p>
+                        <div class="summary-actions">
+                            <a href="/contact?source=esg-calculator" class="summary-btn primary">Get Detailed Report</a>
+                            <a href="/compliance" class="summary-btn secondary">View Certifications</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="methodology">
+                <h3>📐 Calculation Methodology</h3>
+                <p>These estimates are based on EPA and industry-standard lifecycle assessment data for electronic equipment. Actual impact may vary based on equipment condition, age, and final disposition path (reuse vs. recycling).</p>
+                <ul>
+                    <li><strong>CO₂ Avoided:</strong> Based on embodied carbon savings from material recovery vs. virgin material production</li>
+                    <li><strong>Materials Recovered:</strong> Average recovery rates for metals (steel, aluminum, copper, gold) and plastics</li>
+                    <li><strong>Landfill Diversion:</strong> Total weight diverted under our zero-landfill policy</li>
+                    <li><strong>Water Conserved:</strong> Manufacturing water saved when recovered materials replace virgin production</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2024 ECOS Technologies | R2v3 Certified | ISO 14001, 9001, 45001
+    </footer>
+
+    <script>
+        // Environmental impact factors (estimates based on EPA/industry data)
+        const impactFactors = {
+            laptops: { weight: 5, co2: 150, water: 300 },
+            desktops: { weight: 20, co2: 400, water: 800 },
+            monitors: { weight: 15, co2: 200, water: 400 },
+            servers: { weight: 50, co2: 800, water: 1600 },
+            network: { weight: 10, co2: 150, water: 300 }
+        };
+        
+        function calculateImpact() {
+            const values = {
+                laptops: parseInt(document.getElementById('laptops').value) || 0,
+                desktops: parseInt(document.getElementById('desktops').value) || 0,
+                monitors: parseInt(document.getElementById('monitors').value) || 0,
+                servers: parseInt(document.getElementById('servers').value) || 0,
+                network: parseInt(document.getElementById('network').value) || 0
+            };
+            
+            let totalCO2 = 0;
+            let totalWeight = 0;
+            let totalWater = 0;
+            
+            Object.keys(values).forEach(key => {
+                totalCO2 += values[key] * impactFactors[key].co2;
+                totalWeight += values[key] * impactFactors[key].weight;
+                totalWater += values[key] * impactFactors[key].water;
+            });
+            
+            // Material recovery (approx 70% of weight)
+            const materialsRecovered = Math.round(totalWeight * 0.7);
+            
+            // Update display
+            document.getElementById('co2-value').textContent = totalCO2.toLocaleString();
+            document.getElementById('materials-value').textContent = materialsRecovered.toLocaleString();
+            document.getElementById('landfill-value').textContent = totalWeight.toLocaleString();
+            document.getElementById('water-value').textContent = totalWater.toLocaleString();
+            
+            // Update equivalents
+            const milesEquiv = Math.round(totalCO2 / 0.89); // ~0.89 lbs CO2 per mile
+            document.getElementById('co2-equivalent').textContent = 
+                `Equivalent to ${milesEquiv.toLocaleString()} miles not driven`;
+            
+            const treeDays = Math.round(totalCO2 / 48); // ~48 lbs CO2 absorbed per tree per year / 365
+            document.getElementById('materials-equivalent').textContent = 
+                `Including copper, aluminum, steel, gold, and plastics`;
+            
+            document.getElementById('water-equivalent').textContent = 
+                `${Math.round(totalWater / 80)} average showers worth of water`;
+        }
+        
+        // Initialize
+        calculateImpact();
+    </script>
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare IT Asset Disposition | HIPAA-Compliant Data Destruction | ECOS Technologies</title>
+    <meta name="description" content="HIPAA-compliant IT asset disposition for healthcare organizations. R2v3 certified data destruction with BAA execution. Audit-ready certificates of destruction.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --dark: #0A0E27;
+            --healthcare: #0D9488;
+            --healthcare-light: #CCFBF1;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Header - Matches Original */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.98);
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+            letter-spacing: -0.01em;
+            transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after { width: 100%; }
+        .nav-menu a:hover { color: var(--primary); }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--success) 0%, #4CAF4C 100%);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(92, 184, 92, 0.2);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(92, 184, 92, 0.3);
+        }
+        
+        .nav-cta::after { display: none; }
+        
+        /* Hero */
+        .hero {
+            margin-top: 73px;
+            background: linear-gradient(135deg, #134E4A 0%, var(--healthcare) 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M30 25v10M25 30h10" stroke="white" stroke-opacity="0.1" stroke-width="2" fill="none"/%3E%3C/svg%3E') repeat;
+        }
+        
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content { color: white; }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--healthcare);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Stats Box */
+        .stats-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .stats-box h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .stat-item:last-child { border-bottom: none; }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #DC2626;
+        }
+        
+        /* Compliance Section */
+        .compliance-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .compliance-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .compliance-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .compliance-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .compliance-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .compliance-card p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -1.25rem;
+            top: 2rem;
+            font-size: 1.5rem;
+            color: var(--gray-300);
+        }
+        
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--healthcare) 0%, #0F766E 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 1.25rem;
+        }
+        
+        .process-step h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .process-step p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        
+        .service-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--healthcare-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--healthcare) 0%, #0F766E 100%);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--healthcare);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+        
+        /* Footer - Matches Original */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+        }
+        
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            line-height: 1.6;
+            color: var(--gray-400);
+        }
+        
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column ul { list-style: none; }
+        
+        .footer-column li { margin-bottom: 0.75rem; }
+        
+        .footer-column a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.925rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-column a:hover { color: var(--white); }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-step:not(:last-child)::after { display: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .compliance-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">🏥 Healthcare ITAD Specialists</span>
+                <h1>HIPAA-Compliant Data Destruction With Proof</h1>
+                <p>When patient data is on the line, you need documentation that holds up to OCR audits. Our R2v3 certified process delivers serialized certificates of destruction for every device containing PHI.</p>
+                <a href="/contact?source=healthcare" class="hero-cta">Get Healthcare ITAD Quote →</a>
+            </div>
+            
+            <div class="stats-box">
+                <h3>⚠️ Healthcare Data Breach Risks</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Max HIPAA penalty per violation</span>
+                    <span class="stat-value">$2.1M</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Breaches from improper disposal</span>
+                    <span class="stat-value">30%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Avg cost per breached record</span>
+                    <span class="stat-value">$499</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">OCR enforcement actions (2024)</span>
+                    <span class="stat-value">↑ 38%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="compliance-section">
+        <div class="compliance-container">
+            <div class="section-header">
+                <h2>Healthcare Compliance Coverage</h2>
+                <p>Our process addresses the regulatory requirements healthcare organizations face when disposing of IT equipment</p>
+            </div>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h4>🔒 HIPAA Security Rule</h4>
+                    <p>Device-level sanitization meeting §164.310(d)(2) disposal requirements with documented verification.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>📋 HITECH Act</h4>
+                    <p>Breach notification compliance through certified destruction that eliminates disclosure obligations.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>🛡️ NIST 800-88</h4>
+                    <p>Clear, Purge, and Destroy methods documented with verification appropriate to data sensitivity.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>📝 Business Associate Agreement</h4>
+                    <p>Full BAA execution establishing our obligations as your HIPAA business associate.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>🏛️ State Privacy Laws</h4>
+                    <p>Compliance with state-specific healthcare privacy regulations beyond federal requirements.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>✓ Joint Commission</h4>
+                    <p>Documentation formatted for accreditation reviews and compliance audits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <div class="section-header">
+                <h2>Healthcare ITAD Process</h2>
+                <p>Secure, documented chain of custody from your facility to certified destruction</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>BAA & Assessment</h4>
+                    <p>Execute Business Associate Agreement. Inventory data-bearing devices and assess PHI risk levels.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Secure Pickup</h4>
+                    <p>Our trucks, our team. Background-checked personnel with documented chain of custody.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Certified Destruction</h4>
+                    <p>NIST 800-88 compliant sanitization or physical destruction based on data classification.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Documentation</h4>
+                    <p>Serialized certificates of destruction with verification methods for each device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Healthcare ITAD Services</h2>
+                <p>Comprehensive IT disposition for healthcare environments</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">💻</div>
+                    <div>
+                        <h3>Workstation Disposal</h3>
+                        <p>Clinical workstations, nursing station computers, and administrative PCs with PHI properly sanitized and documented.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🖥️</div>
+                    <div>
+                        <h3>Medical Device IT</h3>
+                        <p>Embedded systems, diagnostic equipment with storage, and connected medical devices requiring specialized handling.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📱</div>
+                    <div>
+                        <h3>Mobile Device Management</h3>
+                        <p>Tablets, phones, and portable devices used in patient care with secure data wiping protocols.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🗄️</div>
+                    <div>
+                        <h3>Server & Storage</h3>
+                        <p>EHR servers, PACS storage, backup systems, and archive media with appropriate destruction methods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Protect Your Patients. Protect Your Organization.</h2>
+        <p>Get audit-ready documentation that proves proper PHI disposal compliance.</p>
+        <div class="cta-buttons">
+            <a href="/contact?source=healthcare" class="btn-primary">Request Healthcare Quote</a>
+            <a href="/sample-cod" class="btn-secondary">View Sample Certificate</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ECOS Technologies</h3>
+                <p>Secure IT asset disposition and data destruction services nationwide. Direct pickup with our own trucks and vetted team. Maximum value recovery with complete compliance.</p>
+            </div>
+            <div class="footer-column">
+                <h4>ITAD Services</h4>
+                <ul>
+                    <li><a href="/services">IT Asset Disposition</a></li>
+                    <li><a href="/services#data-destruction">Data Destruction</a></li>
+                    <li><a href="/services#asset-recovery">Asset Recovery</a></li>
+                    <li><a href="/services#recycling">Electronics Recycling</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="/healthcare">Healthcare</a></li>
+                    <li><a href="/financial">Financial Services</a></li>
+                    <li><a href="/government">Government</a></li>
+                    <li><a href="/data-center">Data Centers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/compliance">Certifications</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>4761 Hugh Howell Road</li>
+                    <li>Tucker, GA 30084</li>
+                    <li>404-500-6057</li>
+                    <li>info@ecostech.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. All rights reserved. | R2v3, ISO 14001, 9001, 45001 Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

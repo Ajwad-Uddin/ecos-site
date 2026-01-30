@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free HIPAA IT Disposal Checklist | Healthcare ITAD Compliance | ECOS Technologies</title>
+    <meta name="description" content="Download our free HIPAA-compliant IT disposal checklist. 15-point guide for healthcare organizations managing PHI on retired devices.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --healthcare: #0D9488;
+            --healthcare-light: #CCFBF1;
+            --success: #5CB85C;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #F0FDFA 0%, white 100%);
+            min-height: 100vh;
+        }
+        
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 4rem;
+            align-items: start;
+            min-height: 100vh;
+        }
+        
+        /* Content Side */
+        .content-section {
+            padding-top: 2rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        
+        .back-link:hover {
+            color: var(--healthcare);
+        }
+        
+        .content-badge {
+            display: inline-block;
+            background: var(--healthcare-light);
+            color: var(--healthcare);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .checklist-preview {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .checklist-preview h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .preview-items {
+            list-style: none;
+        }
+        
+        .preview-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+        
+        .preview-items li:last-child {
+            border-bottom: none;
+        }
+        
+        .preview-items .check {
+            width: 20px;
+            height: 20px;
+            background: var(--healthcare);
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .more-indicator {
+            text-align: center;
+            padding: 1rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .testimonial-author strong {
+            color: var(--gray-900);
+        }
+        
+        /* Form Side */
+        .form-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 2rem;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .form-header .icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--healthcare-light) 0%, #99F6E4 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .form-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-header p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--healthcare);
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--healthcare) 0%, #0F766E 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(13, 148, 136, 0.3);
+        }
+        
+        .form-footer {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        /* Success */
+        .success-message {
+            display: none;
+            text-align: center;
+        }
+        
+        .success-message.visible {
+            display: block;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #ECFDF5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .success-message h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .success-message p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--healthcare);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #0F766E;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 900px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-section {
+                position: static;
+                order: -1;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-section">
+            <a href="/" class="back-link">← Back to ECOS Technologies</a>
+            
+            <span class="content-badge">🏥 Healthcare Compliance Resource</span>
+            
+            <h1>HIPAA IT Disposal Compliance Checklist</h1>
+            
+            <p class="subtitle">A 15-point guide for healthcare organizations managing PHI on retired IT equipment. Ensure your disposal process meets HIPAA Security Rule requirements.</p>
+            
+            <div class="checklist-preview">
+                <h3>📋 What's Inside:</h3>
+                <ul class="preview-items">
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Pre-disposal inventory requirements for data-bearing devices</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>NIST 800-88 sanitization method selection guide</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Vendor vetting criteria (certifications, insurance, BAA)</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Documentation requirements for audit readiness</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Chain of custody best practices</span>
+                    </li>
+                </ul>
+                <div class="more-indicator">+ 10 more compliance checkpoints</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"This checklist helped us identify gaps in our IT disposal process before our last compliance audit. The vendor vetting section alone saved us from a potentially costly mistake."</p>
+                <div class="testimonial-author">
+                    <strong>IT Compliance Manager</strong> — Regional Healthcare System
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <div id="form-container">
+                <div class="form-header">
+                    <div class="icon">📄</div>
+                    <h2>Download Free Checklist</h2>
+                    <p>Get instant access to the complete guide</p>
+                </div>
+                
+                <form id="checklist-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="name@hospital.org">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="org">Organization</label>
+                        <input type="text" id="org" name="organization">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Your Role</label>
+                        <select id="role" name="role">
+                            <option value="">Select your role</option>
+                            <option value="it-director">IT Director/Manager</option>
+                            <option value="compliance">Compliance Officer</option>
+                            <option value="security">Security/Privacy Officer</option>
+                            <option value="procurement">Procurement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Download Checklist →
+                    </button>
+                    
+                    <p class="form-footer">
+                        We respect your privacy. Unsubscribe anytime.
+                    </p>
+                </form>
+            </div>
+            
+            <div class="success-message" id="success-message">
+                <div class="success-icon">✓</div>
+                <h2>Checklist Ready!</h2>
+                <p>Click below to download your HIPAA IT Disposal Compliance Checklist.</p>
+                <a href="/downloads/hipaa-disposal-checklist.pdf" class="download-btn" target="_blank">
+                    📄 Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('checklist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('success-message').classList.add('visible');
+        });
+    </script>
+</body>
+</html>

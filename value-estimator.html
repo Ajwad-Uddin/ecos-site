@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Equipment Value Estimator | Free ITAD Quote Calculator | ECOS Technologies</title>
+    <meta name="description" content="Estimate the value of your retired IT equipment. Free instant assessment for laptops, desktops, servers, and network equipment. See potential recovery value.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --success-dark: #4CAF4C;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            background: var(--gray-50);
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+        }
+        
+        .nav-menu a:hover { color: var(--primary); }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-top: 73px;
+            padding: 3rem 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Calculator Card */
+        .calculator-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .calculator-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 1.5rem 2rem;
+            color: white;
+        }
+        
+        .calculator-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .calculator-header p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        .calculator-body {
+            padding: 2rem;
+        }
+        
+        /* Asset Input Section */
+        .asset-section {
+            margin-bottom: 2rem;
+        }
+        
+        .asset-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .asset-input {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .asset-input:hover {
+            border-color: var(--gray-200);
+        }
+        
+        .asset-input.has-value {
+            border-color: var(--success);
+            background: #F0FDF4;
+        }
+        
+        .asset-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .asset-info {
+            flex: 1;
+        }
+        
+        .asset-info label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .asset-info span {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        .asset-input input {
+            width: 70px;
+            padding: 0.5rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
+            font-size: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .asset-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 83, 156, 0.1);
+        }
+        
+        /* Condition Selector */
+        .condition-section {
+            margin-bottom: 2rem;
+        }
+        
+        .condition-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .condition-option {
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        
+        .condition-option:hover {
+            border-color: var(--gray-300);
+        }
+        
+        .condition-option.selected {
+            border-color: var(--primary);
+            background: #EFF6FF;
+        }
+        
+        .condition-option h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .condition-option p {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        /* Results Section */
+        .results-section {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .results-section.visible {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .results-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .results-header h3 {
+            font-size: 1rem;
+            color: #059669;
+            margin-bottom: 0.5rem;
+        }
+        
+        .estimate-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #047857;
+        }
+        
+        .estimate-range {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .results-breakdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .breakdown-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .breakdown-item span {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .breakdown-item strong {
+            font-size: 1rem;
+            color: var(--gray-900);
+        }
+        
+        .results-disclaimer {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            text-align: center;
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--success);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--success-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(92, 184, 92, 0.3);
+        }
+        
+        /* Trust Badges */
+        .trust-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .trust-section p {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+        
+        .trust-badge span {
+            width: 32px;
+            height: 32px;
+            background: var(--gray-100);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 640px) {
+            .asset-grid, .condition-options, .results-breakdown {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources" class="active">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="hero">
+                <h1>IT Equipment Value Estimator</h1>
+                <p>Get an instant estimate of potential recovery value from your retired IT assets. Enter quantities below for a quick assessment.</p>
+            </div>
+            
+            <div class="calculator-card">
+                <div class="calculator-header">
+                    <h2>📊 Quick Value Assessment</h2>
+                    <p>Enter approximate quantities for each asset type</p>
+                </div>
+                
+                <div class="calculator-body">
+                    <div class="asset-section">
+                        <h3>💻 Computing Equipment</h3>
+                        <div class="asset-grid">
+                            <div class="asset-input" id="laptops-input">
+                                <div class="asset-icon">💻</div>
+                                <div class="asset-info">
+                                    <label>Laptops</label>
+                                    <span>Business-grade laptops</span>
+                                </div>
+                                <input type="number" id="laptops" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                            
+                            <div class="asset-input" id="desktops-input">
+                                <div class="asset-icon">🖥️</div>
+                                <div class="asset-info">
+                                    <label>Desktops</label>
+                                    <span>Tower & small form factor</span>
+                                </div>
+                                <input type="number" id="desktops" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                            
+                            <div class="asset-input" id="monitors-input">
+                                <div class="asset-icon">🖵</div>
+                                <div class="asset-info">
+                                    <label>Monitors</label>
+                                    <span>LCD/LED displays</span>
+                                </div>
+                                <input type="number" id="monitors" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                            
+                            <div class="asset-input" id="tablets-input">
+                                <div class="asset-icon">📱</div>
+                                <div class="asset-info">
+                                    <label>Tablets/Phones</label>
+                                    <span>Mobile devices</span>
+                                </div>
+                                <input type="number" id="tablets" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="asset-section">
+                        <h3>🖥️ Infrastructure</h3>
+                        <div class="asset-grid">
+                            <div class="asset-input" id="servers-input">
+                                <div class="asset-icon">🗄️</div>
+                                <div class="asset-info">
+                                    <label>Servers</label>
+                                    <span>Rack & tower servers</span>
+                                </div>
+                                <input type="number" id="servers" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                            
+                            <div class="asset-input" id="network-input">
+                                <div class="asset-icon">🌐</div>
+                                <div class="asset-info">
+                                    <label>Network Equipment</label>
+                                    <span>Switches, routers, firewalls</span>
+                                </div>
+                                <input type="number" id="network" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                            
+                            <div class="asset-input" id="storage-input">
+                                <div class="asset-icon">💾</div>
+                                <div class="asset-info">
+                                    <label>Storage Arrays</label>
+                                    <span>SAN, NAS, DAS</span>
+                                </div>
+                                <input type="number" id="storage" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                            
+                            <div class="asset-input" id="ups-input">
+                                <div class="asset-icon">🔋</div>
+                                <div class="asset-info">
+                                    <label>UPS Systems</label>
+                                    <span>Battery backup units</span>
+                                </div>
+                                <input type="number" id="ups" min="0" value="0" onchange="updateEstimate()">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-section">
+                        <h3>📋 Average Equipment Age</h3>
+                        <div class="condition-options">
+                            <div class="condition-option selected" onclick="selectCondition(this, 'new')" data-multiplier="1">
+                                <h4>0-3 Years</h4>
+                                <p>Newer equipment, likely functional</p>
+                            </div>
+                            <div class="condition-option" onclick="selectCondition(this, 'mid')" data-multiplier="0.6">
+                                <h4>3-5 Years</h4>
+                                <p>Mid-lifecycle, mixed condition</p>
+                            </div>
+                            <div class="condition-option" onclick="selectCondition(this, 'old')" data-multiplier="0.25">
+                                <h4>5+ Years</h4>
+                                <p>Older equipment, limited value</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-section" id="results">
+                        <div class="results-header">
+                            <h3>Estimated Value Range</h3>
+                            <div class="estimate-value" id="estimate-value">$0</div>
+                            <div class="estimate-range" id="estimate-range">Based on current market conditions</div>
+                        </div>
+                        
+                        <div class="results-breakdown" id="breakdown">
+                            <!-- Populated by JS -->
+                        </div>
+                        
+                        <div class="results-disclaimer">
+                            <strong>Note:</strong> This is a preliminary estimate based on average market values. Actual value depends on specific makes, models, and working condition. Contact us for a detailed assessment.
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <a href="/contact" class="btn-primary" id="cta-button">
+                            Get Detailed Quote →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trust-section">
+                <p>Your equipment is in certified hands</p>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span>R2v3</span>
+                        Certified
+                    </div>
+                    <div class="trust-badge">
+                        <span>ISO</span>
+                        14001
+                    </div>
+                    <div class="trust-badge">
+                        <span>ISO</span>
+                        9001
+                    </div>
+                    <div class="trust-badge">
+                        <span>ISO</span>
+                        45001
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001</p>
+    </footer>
+
+    <script>
+        // Average values per unit (in dollars)
+        const baseValues = {
+            laptops: 75,
+            desktops: 35,
+            monitors: 15,
+            tablets: 50,
+            servers: 200,
+            network: 80,
+            storage: 300,
+            ups: 40
+        };
+        
+        let currentMultiplier = 1;
+        
+        function selectCondition(element, condition) {
+            document.querySelectorAll('.condition-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            currentMultiplier = parseFloat(element.dataset.multiplier);
+            updateEstimate();
+        }
+        
+        function updateEstimate() {
+            const values = {
+                laptops: parseInt(document.getElementById('laptops').value) || 0,
+                desktops: parseInt(document.getElementById('desktops').value) || 0,
+                monitors: parseInt(document.getElementById('monitors').value) || 0,
+                tablets: parseInt(document.getElementById('tablets').value) || 0,
+                servers: parseInt(document.getElementById('servers').value) || 0,
+                network: parseInt(document.getElementById('network').value) || 0,
+                storage: parseInt(document.getElementById('storage').value) || 0,
+                ups: parseInt(document.getElementById('ups').value) || 0
+            };
+            
+            // Update input styling
+            Object.keys(values).forEach(key => {
+                const inputDiv = document.getElementById(`${key}-input`);
+                if (values[key] > 0) {
+                    inputDiv.classList.add('has-value');
+                } else {
+                    inputDiv.classList.remove('has-value');
+                }
+            });
+            
+            // Calculate totals
+            let totalEstimate = 0;
+            let breakdown = [];
+            
+            Object.keys(values).forEach(key => {
+                if (values[key] > 0) {
+                    const itemValue = values[key] * baseValues[key] * currentMultiplier;
+                    totalEstimate += itemValue;
+                    breakdown.push({
+                        name: key.charAt(0).toUpperCase() + key.slice(1),
+                        count: values[key],
+                        value: itemValue
+                    });
+                }
+            });
+            
+            const resultsSection = document.getElementById('results');
+            
+            if (totalEstimate > 0) {
+                resultsSection.classList.add('visible');
+                
+                // Calculate range (±20%)
+                const lowEstimate = Math.round(totalEstimate * 0.8);
+                const highEstimate = Math.round(totalEstimate * 1.2);
+                
+                document.getElementById('estimate-value').textContent = 
+                    `$${lowEstimate.toLocaleString()} - $${highEstimate.toLocaleString()}`;
+                document.getElementById('estimate-range').textContent = 
+                    `Estimated recovery value based on ${Object.values(values).reduce((a, b) => a + b, 0)} total items`;
+                
+                // Update breakdown
+                const breakdownHtml = breakdown.map(item => `
+                    <div class="breakdown-item">
+                        <span>${item.name} (${item.count})</span>
+                        <strong>$${Math.round(item.value).toLocaleString()}</strong>
+                    </div>
+                `).join('');
+                
+                document.getElementById('breakdown').innerHTML = breakdownHtml;
+                
+                // Update CTA with data
+                const totalItems = Object.values(values).reduce((a, b) => a + b, 0);
+                const ctaUrl = `/contact?source=estimator&items=${totalItems}&estimate=${Math.round(totalEstimate)}`;
+                document.getElementById('cta-button').href = ctaUrl;
+            } else {
+                resultsSection.classList.remove('visible');
+            }
+        }
+        
+        // Initialize
+        updateEstimate();
+    </script>
+</body>
+</html>

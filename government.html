@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government ITAD Services | Federal & State IT Asset Disposition | ECOS Technologies</title>
+    <meta name="description" content="IT asset disposition for government agencies and federal contractors. NIST 800-88 compliant data destruction, R2v3 certified. GSA-ready documentation and secure chain of custody.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --gov: #1F2937;
+            --gov-accent: #374151;
+            --gov-light: #F3F4F6;
+            --gold: #B45309;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+        }
+        
+        .nav-menu a:hover { color: var(--primary); }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 73px;
+            background: linear-gradient(135deg, #111827 0%, #1F2937 50%, #374151 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M30 0L30 60M0 30L60 30" stroke="white" stroke-opacity="0.03" stroke-width="1"/%3E%3C/svg%3E') repeat;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content .highlight { color: #FCD34D; }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: white;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #FCD34D;
+            color: var(--gov);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* Standards Box */
+        .hero-standards {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .standards-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .standards-header h3 {
+            font-size: 1.1rem;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .standards-header p {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+        }
+        
+        .standard-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.875rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .standard-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gov);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FCD34D;
+            font-size: 0.65rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .standard-content h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        
+        .standard-content p {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+        
+        /* Services Grid */
+        .services-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--gov);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gov-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* Clearance Section */
+        .clearance-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .clearance-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .clearance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .clearance-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+        
+        .clearance-content p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .clearance-list {
+            list-style: none;
+        }
+        
+        .clearance-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+        
+        .clearance-list .check {
+            width: 20px;
+            height: 20px;
+            background: var(--gov);
+            color: #FCD34D;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .clearance-visual {
+            background: linear-gradient(135deg, var(--gov) 0%, var(--gov-accent) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            color: white;
+        }
+        
+        .clearance-visual h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #FCD34D;
+        }
+        
+        .clearance-stat {
+            margin-bottom: 1.5rem;
+        }
+        
+        .clearance-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .clearance-stat .label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--gov) 0%, #111827 100%);
+            text-align: center;
+        }
+        
+        .cta-container { max-width: 800px; margin: 0 auto; }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: #FCD34D;
+            color: var(--gov);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.5);
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-brand h3 { color: white; font-size: 1.25rem; margin-bottom: 1rem; }
+        .footer-brand p { line-height: 1.7; font-size: 0.875rem; }
+        .footer-column h4 { color: white; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.5rem; }
+        .footer-column a { color: var(--gray-400); text-decoration: none; font-size: 0.875rem; }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--gray-700); text-align: center; font-size: 0.875rem; }
+        
+        @media (max-width: 1024px) {
+            .hero-container, .clearance-grid { grid-template-columns: 1fr; }
+            .hero-container { text-align: center; }
+            .hero-badges { justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-content h1 { font-size: 2rem; }
+            .footer-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries" class="active">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badges">
+                    <span class="hero-badge">🏛️ Government ITAD Specialists</span>
+                    <span class="hero-badge">🔐 NIST 800-88 Compliant</span>
+                </div>
+                <h1>Federal-Grade IT Disposal <span class="highlight">With Documentation to Match</span></h1>
+                <p>Government agencies and federal contractors require documented data destruction that meets strict security standards. Our R2v3 certified process provides the chain of custody and destruction verification your compliance requirements demand.</p>
+                <a href="/contact?industry=government" class="hero-cta">
+                    Get Government Quote →
+                </a>
+            </div>
+            
+            <div class="hero-standards">
+                <div class="standards-header">
+                    <h3>Security Standards We Support</h3>
+                    <p>Documentation for government compliance</p>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">NIST</div>
+                    <div class="standard-content">
+                        <h4>NIST 800-88 Rev.1</h4>
+                        <p>Media Sanitization Guidelines</p>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">DoD</div>
+                    <div class="standard-content">
+                        <h4>DoD 5220.22-M</h4>
+                        <p>Data Destruction Standard</p>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">FISMA</div>
+                    <div class="standard-content">
+                        <h4>FISMA</h4>
+                        <p>Federal Information Security</p>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">FedRAMP</div>
+                    <div class="standard-content">
+                        <h4>FedRAMP Ready</h4>
+                        <p>Cloud Security Program Support</p>
+                    </div>
+                </div>
+                
+                <div class="standard-item">
+                    <div class="standard-icon">DFARS</div>
+                    <div class="standard-content">
+                        <h4>DFARS/CMMC</h4>
+                        <p>Defense Contractor Requirements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Government ITAD Services</h2>
+                <p>Specialized services for federal, state, and local government agencies</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔐</div>
+                    <h3>Classified Media Destruction</h3>
+                    <p>Physical destruction for media requiring NSA-approved sanitization. Shredding, degaussing, and incineration options with witnessed verification.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Compliance Documentation</h3>
+                    <p>Serial number-level certificates of destruction, chain of custody logs, and audit-ready reporting packages for federal compliance reviews.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Secure Transport</h3>
+                    <p>GPS-tracked, secure transport with background-checked personnel. Locked containers and documented chain of custody from pickup to destruction.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>On-Site Destruction</h3>
+                    <p>Mobile destruction units for agencies requiring on-premises sanitization. Witnessed destruction with immediate certificate generation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Contractor Support</h3>
+                    <p>ITAD services for federal contractors managing CUI, CDI, and other controlled data. Documentation supporting CMMC compliance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">♻️</div>
+                    <h3>GSA Surplus</h3>
+                    <p>Proper disposition of government surplus equipment. Value recovery where appropriate, environmental compliance for all materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clearance-section">
+        <div class="clearance-container">
+            <div class="clearance-grid">
+                <div class="clearance-content">
+                    <h2>Secure Environment Capabilities</h2>
+                    <p>We understand government facilities have unique security requirements. Our team is experienced working within secure environments with appropriate protocols.</p>
+                    
+                    <ul class="clearance-list">
+                        <li><span class="check">✓</span><span>Background-checked personnel available</span></li>
+                        <li><span class="check">✓</span><span>Escort protocols and restricted area compliance</span></li>
+                        <li><span class="check">✓</span><span>Witnessed destruction options</span></li>
+                        <li><span class="check">✓</span><span>On-site mobile destruction units</span></li>
+                        <li><span class="check">✓</span><span>After-hours and weekend scheduling</span></li>
+                        <li><span class="check">✓</span><span>Secure container transport</span></li>
+                        <li><span class="check">✓</span><span>Custom security protocols available</span></li>
+                    </ul>
+                </div>
+                
+                <div class="clearance-visual">
+                    <h3>By The Numbers</h3>
+                    <div class="clearance-stat">
+                        <div class="number">Top 6%</div>
+                        <div class="label">Of ITAD providers hold R2v3 + ISO certifications</div>
+                    </div>
+                    <div class="clearance-stat">
+                        <div class="number">24 Hours</div>
+                        <div class="label">Customized quote delivery</div>
+                    </div>
+                    <div class="clearance-stat">
+                        <div class="number">30 Days</div>
+                        <div class="label">Certificate delivery guarantee</div>
+                    </div>
+                    <div class="clearance-stat">
+                        <div class="number">Nationwide</div>
+                        <div class="label">Direct service, no subcontractors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready for Secure IT Disposal?</h2>
+            <p>Get a customized quote for your government agency within 24 hours</p>
+            <div class="cta-buttons">
+                <a href="/contact?industry=government" class="btn-primary">Request Government Quote</a>
+                <a href="/sample-cod" class="btn-secondary">View Sample Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ECOS Technologies</h3>
+                <p>R2v3 and ISO certified IT asset disposition. Secure data destruction with audit-ready documentation for government agencies nationwide.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Government Services</h4>
+                <ul>
+                    <li><a href="/services">Classified Destruction</a></li>
+                    <li><a href="/services">On-Site Services</a></li>
+                    <li><a href="/services">Compliance Documentation</a></li>
+                    <li><a href="/services">Secure Transport</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Compliance</h4>
+                <ul>
+                    <li><a href="/compliance">R2v3 Certification</a></li>
+                    <li><a href="/compliance">ISO 14001</a></li>
+                    <li><a href="/compliance">ISO 9001</a></li>
+                    <li><a href="/compliance">NIST 800-88</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>4761 Hugh Howell Road</li>
+                    <li>Tucker, GA 30084</li>
+                    <li>404-500-6057</li>
+                    <li>info@ecostech.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Asset Disposition During M&A | Merger & Acquisition ITAD | ECOS Technologies</title>
+    <meta name="description" content="Secure IT asset disposition during mergers and acquisitions. Rapid deployment, certified data destruction, and compliance documentation for M&A transitions. 24-hour quote turnaround.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0F172A;
+            --accent: #3B82F6;
+            --accent-light: #DBEAFE;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+        }
+        
+        .nav-menu a:hover { color: var(--accent); }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 73px;
+            background: var(--primary);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content .highlight {
+            background: linear-gradient(135deg, var(--accent) 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: white;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .hero-cta:hover {
+            background: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Quick Form */
+        .quick-form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        
+        .quick-form-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .quick-form-card .subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.375rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .submit-btn:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+        
+        .form-trust {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .timeline-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 28px;
+            right: -1rem;
+            width: calc(100% - 56px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--gray-300) 100%);
+        }
+        
+        .timeline-number {
+            width: 56px;
+            height: 56px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* Why Section */
+        .why-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .why-card {
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s;
+        }
+        
+        .why-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        
+        .why-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .why-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .why-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        
+        /* Checklist Section */
+        .checklist-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #1E293B 100%);
+            color: white;
+        }
+        
+        .checklist-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .checklist-content h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .checklist-content p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .checklist-items {
+            list-style: none;
+        }
+        
+        .checklist-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .checklist-items .check {
+            width: 22px;
+            height: 22px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .checklist-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+        
+        .checklist-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .checklist-visual {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .doc-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.125rem;
+        }
+        
+        .doc-item p {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: var(--accent);
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--accent);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-container, .checklist-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-badges {
+                justify-content: center;
+            }
+            
+            .timeline {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .timeline-item:not(:last-child)::after {
+                display: none;
+            }
+            
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badges">
+                    <span class="hero-badge">🔄 M&A Transitions</span>
+                    <span class="hero-badge">⚡ Rapid Deployment</span>
+                </div>
+                <h1>IT Asset Disposition During <span class="highlight">Mergers & Acquisitions</span></h1>
+                <p>M&A timelines don't wait. When you're consolidating offices, divesting assets, or integrating IT systems, you need an ITAD partner who can mobilize fast—with the documentation your legal and compliance teams require.</p>
+                <a href="#quick-form" class="hero-cta">
+                    Get M&A ITAD Quote →
+                </a>
+            </div>
+            
+            <div class="quick-form-card" id="quick-form">
+                <h3>Get a Quote in 24 Hours</h3>
+                <p class="subtitle">Tell us about your M&A timeline</p>
+                
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="M&A ITAD Quote Request">
+                    <input type="hidden" name="source" value="ma-landing-page">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Work Email *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" name="company">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Approx. # of Assets</label>
+                            <select name="assetCount">
+                                <option value="">Select range</option>
+                                <option value="1-50">1-50 units</option>
+                                <option value="51-200">51-200 units</option>
+                                <option value="201-500">201-500 units</option>
+                                <option value="500+">500+ units</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Timeline</label>
+                            <select name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="urgent">ASAP (within 2 weeks)</option>
+                                <option value="30days">Within 30 days</option>
+                                <option value="60days">Within 60 days</option>
+                                <option value="planning">Still planning</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Request Quote →
+                    </button>
+                    
+                    <p class="form-trust">🔒 Your information is secure. We respond within 24 hours.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-container">
+            <div class="section-header">
+                <h2>M&A IT Disposition Timeline</h2>
+                <p>We work within your deal timeline, not the other way around</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <h4>Deal Announcement</h4>
+                    <p>Contact us during due diligence. We'll assess asset inventory and provide preliminary quotes.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <h4>Planning Phase</h4>
+                    <p>Site surveys, logistics planning, and coordination with your IT and facilities teams.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <h4>Close & Transition</h4>
+                    <p>Rapid deployment of pickup crews. Multiple locations, tight timelines—we scale to meet them.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <h4>Documentation</h4>
+                    <p>Serial-level certificates of destruction and settlement reports for your legal records.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="why-container">
+            <div class="section-header">
+                <h2>Why ECOS for M&A Transitions</h2>
+                <p>The speed, flexibility, and documentation your deal requires</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3>Rapid Mobilization</h3>
+                    <p>Deals close fast. We can have crews on-site within days, not weeks. Multi-location pickups coordinated to your timeline.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-icon">📋</div>
+                    <h3>Legal-Ready Documentation</h3>
+                    <p>Serial number-level certificates satisfy due diligence requirements. Complete audit trail for both buyer and seller records.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-icon">🔐</div>
+                    <h3>Data Security</h3>
+                    <p>NIST 800-88 compliant destruction. Protect sensitive data during transition when security protocols may be in flux.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Value Recovery</h3>
+                    <p>Equipment with market value generates revenue share. Offset transition costs with recovered asset value.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-icon">🚛</div>
+                    <h3>Single Vendor</h3>
+                    <p>Our trucks, our team, no subcontractors. One contract, one point of contact, complete chain of custody.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-icon">🏢</div>
+                    <h3>Multi-Location</h3>
+                    <p>Headquarters, branches, remote offices. We coordinate logistics across all your locations with consistent documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checklist-section">
+        <div class="checklist-container">
+            <div class="checklist-content">
+                <h2>M&A IT Disposal Checklist</h2>
+                <p>Don't let IT asset disposition become a deal-closing bottleneck. Here's what experienced M&A teams consider:</p>
+                
+                <ul class="checklist-items">
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Complete inventory of all IT assets at all locations</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Data classification and destruction requirements</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Timeline alignment with deal close and lease expirations</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Documentation requirements for buyer/seller records</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Value recovery vs. disposal cost analysis</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span>Environmental compliance for all materials</span>
+                    </li>
+                </ul>
+                
+                <a href="/contact?source=ma-checklist" class="checklist-cta">
+                    📥 Get Full M&A ITAD Checklist
+                </a>
+            </div>
+            
+            <div class="checklist-visual">
+                <div class="doc-item">
+                    <div class="doc-icon">📄</div>
+                    <div>
+                        <h4>Certificate of Destruction</h4>
+                        <p>Serial-level proof for legal records</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-icon">📦</div>
+                    <div>
+                        <h4>Asset Manifest</h4>
+                        <p>Complete inventory documentation</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-icon">🔗</div>
+                    <div>
+                        <h4>Chain of Custody</h4>
+                        <p>Every handoff documented</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-icon">💵</div>
+                    <div>
+                        <h4>Settlement Report</h4>
+                        <p>Value recovery accounting</p>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-icon">♻️</div>
+                    <div>
+                        <h4>Environmental Certificate</h4>
+                        <p>R2v3 compliance verification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Closing Soon? Let's Talk.</h2>
+            <p>We've supported IT transitions for acquisitions, divestitures, and consolidations. Tell us your timeline.</p>
+            <a href="#quick-form" class="btn-white">
+                Get M&A Quote →
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001</p>
+    </footer>
+</body>
+</html>

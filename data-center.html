@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Center Decommissioning Services | Server & IT Infrastructure Disposal | ECOS Technologies</title>
+    <meta name="description" content="Complete data center decommissioning services. Secure server disposal, rack removal, cable management, and facility restoration. R2v3 certified with serialized destruction certificates.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --dc: #7C3AED;
+            --dc-light: #EDE9FE;
+            --dc-dark: #5B21B6;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+        }
+        
+        .nav-menu a:hover { color: var(--primary); }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 73px;
+            background: linear-gradient(135deg, #1E1B4B 0%, var(--dc) 50%, #8B5CF6 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Crect x="0" y="0" width="2" height="100" fill="white" fill-opacity="0.02"/%3E%3Crect x="25" y="0" width="2" height="100" fill="white" fill-opacity="0.02"/%3E%3Crect x="50" y="0" width="2" height="100" fill="white" fill-opacity="0.02"/%3E%3Crect x="75" y="0" width="2" height="100" fill="white" fill-opacity="0.02"/%3E%3C/svg%3E') repeat;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero .highlight { color: #C4B5FD; }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--dc);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dc);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item .label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--dc);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--dc-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .process-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .process-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--dc-light);
+            transform: translateX(-50%);
+        }
+        
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .process-step:nth-child(even) .step-content {
+            order: 2;
+            text-align: left;
+        }
+        
+        .process-step:nth-child(odd) .step-content {
+            text-align: right;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 48px;
+            background: var(--dc);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            z-index: 1;
+        }
+        
+        .step-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-content p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* Why Us Section */
+        .why-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--dc) 0%, var(--dc-dark) 100%);
+            color: white;
+        }
+        
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .why-section .section-header h2 {
+            color: white;
+        }
+        
+        .why-section .section-header p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .why-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .why-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .why-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: var(--gray-900);
+            text-align: center;
+        }
+        
+        .cta-container { max-width: 800px; margin: 0 auto; }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--dc);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--dc-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0F0F0F;
+            color: var(--gray-400);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-brand h3 { color: white; font-size: 1.25rem; margin-bottom: 1rem; }
+        .footer-brand p { line-height: 1.7; font-size: 0.875rem; }
+        .footer-column h4 { color: white; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.5rem; }
+        .footer-column a { color: var(--gray-400); text-decoration: none; font-size: 0.875rem; }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid #333; text-align: center; font-size: 0.875rem; }
+        
+        @media (max-width: 1024px) {
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .services-grid, .why-grid { grid-template-columns: 1fr; }
+            .process-timeline::before { left: 24px; }
+            .process-step { grid-template-columns: 1fr; gap: 1rem; padding-left: 70px; }
+            .step-number { left: 24px; transform: none; }
+            .process-step:nth-child(odd) .step-content,
+            .process-step:nth-child(even) .step-content { text-align: left; order: 1; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .stats-container { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services" class="active">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <span class="hero-badge">🖥️ Data Center Specialists</span>
+            <h1>Data Center Decommissioning <span class="highlight">Done Right</span></h1>
+            <p>From single racks to entire facilities. Secure asset removal, certified data destruction, and maximum value recovery with minimal business disruption. Project management included.</p>
+            <a href="/contact?service=datacenter" class="hero-cta">
+                Get Decommissioning Quote →
+            </a>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="number">R2v3</div>
+                <div class="label">Certified Processing Facility</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">100%</div>
+                <div class="label">Zero Landfill Commitment</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">24hr</div>
+                <div class="label">Quote Turnaround</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">Nationwide</div>
+                <div class="label">Direct Service Coverage</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Complete Decommissioning Services</h2>
+                <p>Everything you need to securely retire data center infrastructure</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>Server & Storage Disposal</h3>
+                    <p>Secure handling of servers, SANs, NAS systems, and hyperconverged infrastructure. Serialized tracking from rack to final disposition.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔐</div>
+                    <h3>Data Destruction</h3>
+                    <p>NIST 800-88 compliant sanitization for all data-bearing devices. Certificate of destruction with serial number verification for every drive.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>De-Installation</h3>
+                    <p>Professional rack de-installation, cable removal, and equipment extraction. Minimize disruption to active operations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Network Equipment</h3>
+                    <p>Switches, routers, firewalls, and load balancers. Proper configuration clearing and secure disposal with documentation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔋</div>
+                    <h3>UPS & Power Systems</h3>
+                    <p>Battery backup systems, PDUs, and power infrastructure. Proper hazmat handling for batteries with environmental compliance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Logistics & Transport</h3>
+                    <p>Secure packaging, GPS-tracked transport, and complete chain of custody. Our trucks, our team, no subcontractors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <div class="section-header">
+                <h2>Decommissioning Process</h2>
+                <p>A structured approach to minimize risk and maximize value recovery</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-content">
+                        <h4>Planning & Assessment</h4>
+                        <p>Site survey, asset inventory, timeline coordination. We identify value recovery opportunities and create a detailed project plan.</p>
+                    </div>
+                    <div class="step-number">1</div>
+                    <div></div>
+                </div>
+                
+                <div class="process-step">
+                    <div></div>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>De-Installation</h4>
+                        <p>Professional equipment removal with proper labeling and chain of custody initiation. Minimal disruption to ongoing operations.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <h4>Secure Transport</h4>
+                        <p>GPS-tracked vehicles, locked containers, background-checked personnel. Complete accountability from site to facility.</p>
+                    </div>
+                    <div class="step-number">3</div>
+                    <div></div>
+                </div>
+                
+                <div class="process-step">
+                    <div></div>
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Data Destruction</h4>
+                        <p>NIST 800-88 compliant sanitization. Physical destruction where required. Individual certificates for every data-bearing device.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <h4>Value Recovery</h4>
+                        <p>Remarketing of equipment with residual value. Transparent settlement reports with clear value attribution.</p>
+                    </div>
+                    <div class="step-number">5</div>
+                    <div></div>
+                </div>
+                
+                <div class="process-step">
+                    <div></div>
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Documentation</h4>
+                        <p>Complete audit package: certificates of destruction, chain of custody logs, environmental compliance, settlement reports.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="why-container">
+            <div class="section-header">
+                <h2>Why ECOS for Data Center Decommissioning</h2>
+                <p>The expertise and certifications your project requires</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>🛡️ Single-Vendor Accountability</h3>
+                    <p>One contract, one vendor, complete chain of custody. No subcontractors means no gaps in security or documentation.</p>
+                </div>
+                
+                <div class="why-card">
+                    <h3>📋 Audit-Ready Documentation</h3>
+                    <p>Serial number-level tracking from rack to disposition. Certificates of destruction that satisfy compliance requirements.</p>
+                </div>
+                
+                <div class="why-card">
+                    <h3>💰 Value Maximization</h3>
+                    <p>Equipment with market value generates revenue share. Turn your disposal cost into potential recovery.</p>
+                </div>
+                
+                <div class="why-card">
+                    <h3>🌍 Environmental Compliance</h3>
+                    <p>R2v3 certified, zero landfill policy. Proper handling of batteries, capacitors, and other regulated materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Plan Your Decommissioning Project?</h2>
+            <p>Get a detailed proposal with timeline and value recovery estimate</p>
+            <div class="cta-buttons">
+                <a href="/contact?service=datacenter" class="btn-primary">Request Project Quote</a>
+                <a href="/sample-cod" class="btn-secondary">View Sample Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ECOS Technologies</h3>
+                <p>R2v3 and ISO certified data center decommissioning. Secure, compliant, and sustainable disposal for enterprise infrastructure.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Data Center Services</h4>
+                <ul>
+                    <li><a href="/services">Server Disposal</a></li>
+                    <li><a href="/services">Network Equipment</a></li>
+                    <li><a href="/services">Storage Systems</a></li>
+                    <li><a href="/services">UPS & Power</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Compliance</h4>
+                <ul>
+                    <li><a href="/compliance">R2v3 Certification</a></li>
+                    <li><a href="/compliance">ISO 14001</a></li>
+                    <li><a href="/compliance">ISO 9001</a></li>
+                    <li><a href="/compliance">NIST 800-88</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>4761 Hugh Howell Road</li>
+                    <li>Tucker, GA 30084</li>
+                    <li>404-500-6057</li>
+                    <li>info@ecostech.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 ECOS Technologies. All rights reserved. | R2v3 Certified | ISO 14001, 9001, 45001</p>
+        </div>
+    </footer>
+</body>
+</html>

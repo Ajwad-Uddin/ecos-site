@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Relocation IT Disposal | Moving Office IT Equipment | ECOS Technologies</title>
+    <meta name="description" content="IT asset disposition services for office moves and relocations. Secure disposal of equipment you're not taking, certified data destruction, move coordination.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --move: #F59E0B;
+            --move-light: #FEF3C7;
+            --move-dark: #D97706;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+        }
+        
+        .nav-cta {
+            background: var(--success);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 73px;
+            background: linear-gradient(135deg, #78350F 0%, var(--move) 50%, #FBBF24 100%);
+            padding: 5rem 2rem;
+        }
+        
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-content {
+            color: white;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--move-dark);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Checklist Box */
+        .hero-checklist {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .hero-checklist h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist-item .check {
+            width: 24px;
+            height: 24px;
+            background: var(--move-light);
+            border: 2px solid var(--move);
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .checklist-item .check.done {
+            background: var(--move);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+        }
+        
+        .checklist-item span {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .benefits-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        
+        .benefit-card .icon {
+            width: 64px;
+            height: 64px;
+            background: var(--move-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .process-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -1.25rem;
+            top: 2rem;
+            font-size: 1.5rem;
+            color: var(--gray-300);
+        }
+        
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--move) 0%, var(--move-dark) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 1.25rem;
+        }
+        
+        .process-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+        
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--move) 0%, var(--move-dark) 100%);
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--move-dark);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">🏢 Office Moving? We Can Help</span>
+                <h1>IT Equipment Disposal for Office Relocations</h1>
+                <p>Moving office? Don't pay to move old equipment you're replacing anyway. We'll pick up what you're not taking, securely destroy data, and handle everything before your move date.</p>
+                <a href="/contact?source=relocation" class="hero-cta">
+                    Get Relocation Quote →
+                </a>
+            </div>
+            
+            <div class="hero-checklist">
+                <h3>📋 Office Move IT Checklist</h3>
+                <div class="checklist-item">
+                    <div class="check done">✓</div>
+                    <span>Inventory equipment: keep vs. dispose</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check done">✓</div>
+                    <span>Identify data-bearing devices</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check done">✓</div>
+                    <span>Schedule pre-move pickup</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check"></div>
+                    <span>Coordinate with move timeline</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check"></div>
+                    <span>Obtain destruction certificates</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check"></div>
+                    <span>Complete lease compliance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <div class="section-header">
+                <h2>Why Handle IT Disposal Before Your Move</h2>
+                <p>Save money, reduce risk, and simplify your relocation</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">💰</div>
+                    <h3>Lower Moving Costs</h3>
+                    <p>Every pound costs money to move. Dispose of equipment you're replacing and reduce moving expenses significantly.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🔐</div>
+                    <h3>Secure Data Destruction</h3>
+                    <p>Old equipment contains sensitive data. Certified destruction before you move prevents security gaps during the transition.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">📋</div>
+                    <h3>Lease Compliance</h3>
+                    <p>Many leases require empty space at turnover. We coordinate pickup to meet your lease obligations.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">⏱️</div>
+                    <h3>Timeline Flexibility</h3>
+                    <p>Pre-move pickup, post-move cleanup, or phased approach—we work with your relocation schedule.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">💵</div>
+                    <h3>Value Recovery</h3>
+                    <p>Equipment with value generates revenue share. Offset disposal costs or fund new equipment purchases.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🌍</div>
+                    <h3>Environmental Compliance</h3>
+                    <p>R2v3 certified, zero landfill. Meet corporate sustainability commitments with documented recycling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <div class="section-header">
+                <h2>Relocation ITAD Process</h2>
+                <p>Coordinated with your move timeline</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Inventory Review</h4>
+                    <p>Identify equipment for disposal vs. relocation. Quote based on quantities and timeline.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Schedule Pickup</h4>
+                    <p>Coordinate with your move date. Pre-move, day-of, or post-move options available.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Secure Removal</h4>
+                    <p>Our team handles de-installation and removal. Chain of custody starts at pickup.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Documentation</h4>
+                    <p>Destruction certificates and settlement reports delivered within 30 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2>Office Move IT FAQs</h2>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How far in advance should we schedule pickup?</h3>
+                <p>Ideally 2-4 weeks before your move date, but we can accommodate shorter timelines. Contact us as soon as you know your move date for best scheduling flexibility.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Can you pick up on the same day as our movers?</h3>
+                <p>Yes, we can coordinate day-of pickups. We recommend scheduling us for the morning with your movers arriving later, giving time to remove disposed equipment first.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What about equipment at the new location that needs disposal?</h3>
+                <p>If you're moving into a space with existing IT equipment, we can include that in the same pickup. Just let us know during the quote process.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How quickly do we get certificates of destruction?</h3>
+                <p>Standard delivery is within 30 days. Expedited options available if you need documentation sooner for compliance or audit purposes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Moving Soon?</h2>
+            <p>Get a quick quote for your relocation IT disposal needs. We'll work with your timeline.</p>
+            <div class="cta-buttons">
+                <a href="/contact?source=relocation" class="btn-primary">Get Relocation Quote</a>
+                <a href="/quick-quote" class="btn-secondary">Quick Quote Form</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2024 ECOS Technologies | R2v3 Certified | ISO 14001, 9001, 45001
+    </footer>
+</body>
+</html>

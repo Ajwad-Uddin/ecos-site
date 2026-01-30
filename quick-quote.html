@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quick Quote | ITAD Services | ECOS Technologies</title>
+    <meta name="description" content="Get an instant ITAD quote in under 60 seconds. Secure data destruction and IT asset disposition with R2v3 certified documentation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0F172A 0%, var(--primary) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .quote-card {
+            background: white;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+        }
+        
+        .quote-header {
+            background: linear-gradient(135deg, var(--success) 0%, #4CAF4C 100%);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .quote-header h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quote-header p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+        
+        .quote-body {
+            padding: 2rem;
+        }
+        
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .trust-item {
+            text-align: center;
+        }
+        
+        .trust-item .badge {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.55rem;
+            font-weight: 700;
+            margin: 0 auto 0.25rem;
+        }
+        
+        .trust-item span {
+            font-size: 0.7rem;
+            color: var(--gray-600);
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            background: var(--gray-50);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 83, 156, 0.1);
+        }
+        
+        .form-group input::placeholder {
+            color: var(--gray-400);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 83, 156, 0.3);
+        }
+        
+        .form-footer {
+            margin-top: 1.25rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .response-time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #FEF3C7;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #92400E;
+            font-weight: 500;
+        }
+        
+        /* Success State */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .success-state.visible {
+            display: block;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .success-state h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .success-state p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .success-state .next-steps {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .success-state .next-steps h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .success-state .next-steps ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+        
+        .success-state .next-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-row {
+                gap: 1rem;
+            }
+            
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-card">
+        <div class="quote-header">
+            <h1>⚡ Quick Quote</h1>
+            <p>Get your ITAD estimate in under 60 seconds</p>
+        </div>
+        
+        <div class="quote-body">
+            <!-- Form State -->
+            <div id="form-state">
+                <div class="trust-row">
+                    <div class="trust-item">
+                        <div class="badge">R2v3</div>
+                        <span>Certified</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="badge">ISO</div>
+                        <span>14001</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="badge">ISO</div>
+                        <span>9001</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="badge">NIST</div>
+                        <span>800-88</span>
+                    </div>
+                </div>
+                
+                <form id="quick-quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="Quick Quote Request">
+                    <input type="hidden" name="source" value="quick-quote-page">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@company.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Approx. # of Devices *</label>
+                            <select id="quantity" name="quantity" required>
+                                <option value="">Select range</option>
+                                <option value="1-25">1-25 devices</option>
+                                <option value="26-100">26-100 devices</option>
+                                <option value="101-500">101-500 devices</option>
+                                <option value="500+">500+ devices</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">Location (ZIP) *</label>
+                            <input type="text" id="zip" name="zip" required placeholder="30084" maxlength="10">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Get My Quote →
+                    </button>
+                    
+                    <div class="response-time">
+                        ⏱️ Quotes typically delivered within 24 hours
+                    </div>
+                    
+                    <p class="form-footer">
+                        By submitting, you agree to our <a href="/privacy">Privacy Policy</a>.<br>
+                        We'll never share your information.
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Success State -->
+            <div class="success-state" id="success-state">
+                <div class="success-icon">✓</div>
+                <h2>Quote Request Received!</h2>
+                <p>Thanks for reaching out. A member of our team will review your request and get back to you within 24 hours with a customized quote.</p>
+                
+                <div class="next-steps">
+                    <h4>What happens next:</h4>
+                    <ul>
+                        <li>📋 We'll review your equipment details</li>
+                        <li>💰 Prepare a quote with pricing + value recovery estimate</li>
+                        <li>📧 Email your detailed proposal within 24 hours</li>
+                        <li>📞 Follow up to answer any questions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('quick-quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In production, submit to Formspree
+            // For now, simulate success
+            
+            document.getElementById('form-state').style.display = 'none';
+            document.getElementById('success-state').classList.add('visible');
+            
+            // Track conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'engagement',
+                    'event_label': 'quick_quote'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

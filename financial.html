@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Services IT Asset Disposition | SOX & GLBA Compliant | ECOS Technologies</title>
+    <meta name="description" content="SOX, GLBA, and PCI-DSS compliant IT asset disposition for financial institutions. R2v3 certified data destruction with audit-ready documentation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00539C;
+            --accent: #0EA5E9;
+            --success: #5CB85C;
+            --dark: #0A0E27;
+            --financial: #1E40AF;
+            --financial-light: #DBEAFE;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.98);
+        }
+        
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo { text-decoration: none; display: flex; align-items: center; }
+        .logo img { height: 55px; width: auto; }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.925rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover { color: var(--primary); }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--success) 0%, #4CAF4C 100%);
+            color: white !important;
+            padding: 0.625rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .hero {
+            margin-top: 73px;
+            background: linear-gradient(135deg, #1E3A8A 0%, var(--financial) 50%, #3B82F6 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="40" height="40" fill="none" stroke="white" stroke-opacity="0.05" stroke-width="1"/%3E%3C/svg%3E') repeat;
+        }
+        
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content { color: white; }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--financial);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .regulations-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .regulations-box h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+        
+        .regulation-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .regulation-item:last-child { border-bottom: none; }
+        
+        .regulation-badge {
+            background: var(--financial);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            min-width: 70px;
+            text-align: center;
+        }
+        
+        .regulation-text {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+        }
+        
+        .content-section {
+            padding: 5rem 2rem;
+            background: var(--gray-50);
+        }
+        
+        .content-section.white { background: white; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        
+        .feature-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--financial-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--financial) 0%, #1E3A8A 100%);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--financial);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+        }
+        
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p { color: var(--gray-400); line-height: 1.6; }
+        
+        .footer-column h4 {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.925rem;
+        }
+        .footer-column a:hover { color: white; }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .footer-container { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/" class="logo">
+                <img src="https://ajwadu.sg-host.com/wp-content/uploads/2025/11/ChatGPT-Image-Nov-3-2025-12_00_40-PM-e1762190483555.png" alt="ECOS Technologies">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/industries">Industries</a></li>
+                <li><a href="/compliance">Compliance</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact" class="nav-cta">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">🏦 Financial Services ITAD</span>
+                <h1>IT Disposal That Survives Your Next Audit</h1>
+                <p>When examiners ask about data destruction controls, your documentation speaks for you. Our R2v3 certified process delivers the serial-number level proof financial regulators expect.</p>
+                <a href="/contact?source=financial" class="hero-cta">Get Financial Services Quote →</a>
+            </div>
+            
+            <div class="regulations-box">
+                <h3>📋 Regulatory Coverage</h3>
+                <div class="regulation-item">
+                    <span class="regulation-badge">SOX</span>
+                    <span class="regulation-text">Section 404 internal controls documentation</span>
+                </div>
+                <div class="regulation-item">
+                    <span class="regulation-badge">GLBA</span>
+                    <span class="regulation-text">Safeguards Rule disposal requirements</span>
+                </div>
+                <div class="regulation-item">
+                    <span class="regulation-badge">PCI-DSS</span>
+                    <span class="regulation-text">Cardholder data destruction standards</span>
+                </div>
+                <div class="regulation-item">
+                    <span class="regulation-badge">FACTA</span>
+                    <span class="regulation-text">Consumer information disposal compliance</span>
+                </div>
+                <div class="regulation-item">
+                    <span class="regulation-badge">SEC</span>
+                    <span class="regulation-text">New cybersecurity disclosure rules</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Financial Services ITAD Capabilities</h2>
+                <p>Comprehensive IT disposition for banks, credit unions, investment firms, and insurance companies</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <div>
+                        <h3>Audit-Ready Documentation</h3>
+                        <p>Serialized certificates with destruction method, date/time stamps, and verification signatures that satisfy examiner requirements.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔗</div>
+                    <div>
+                        <h3>Complete Chain of Custody</h3>
+                        <p>Documented asset tracking from your facility through final disposition with tamper-evident controls.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚛</div>
+                    <div>
+                        <h3>Our Trucks, Our Team</h3>
+                        <p>Background-checked employees using company-owned vehicles. No subcontractors touching your customer data.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💰</div>
+                    <div>
+                        <h3>Value Recovery</h3>
+                        <p>Maximize return on equipment with market value while maintaining complete compliance documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready for Your Next Examination?</h2>
+        <p>Get documentation that demonstrates proper data destruction controls to regulators.</p>
+        <div class="cta-buttons">
+            <a href="/contact?source=financial" class="btn-primary">Request Financial Services Quote</a>
+            <a href="/sample-cod" class="btn-secondary">View Sample Certificate</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ECOS Technologies</h3>
+                <p>Secure IT asset disposition and data destruction services nationwide. Direct pickup with our own trucks and vetted team.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services">IT Asset Disposition</a></li>
+                    <li><a href="/services#data-destruction">Data Destruction</a></li>
+                    <li><a href="/services#asset-recovery">Asset Recovery</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="/healthcare">Healthcare</a></li>
+                    <li><a href="/financial">Financial Services</a></li>
+                    <li><a href="/government">Government</a></li>
+                    <li><a href="/data-center">Data Centers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/compliance">Certifications</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>4761 Hugh Howell Road</li>
+                    <li>Tucker, GA 30084</li>
+                    <li>404-500-6057</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ECOS Technologies. R2v3, ISO 14001, 9001, 45001 Certified</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 10);
+        });
+    </script>
+</body>
+</html>
